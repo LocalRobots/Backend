@@ -1,0 +1,117 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/street_furniture/protos/Bench.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.26213024041736316 0.32060038397186535 0.9102214735194001 1.4637257174318985
+  position -0.15999905894102096 -1.9505626867193948 1.6024381117572815
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 10
+  floorAppearance Parquetry {
+    type "dark strip"
+    colorOverride 0.7 0.8 0.8
+  }
+}
+Bench {
+  translation 0 3.42 0
+  rotation 0 0 -1 1.5708
+}
+Solid {
+  translation 1.9168383755483505 1.0494152285882498e-16 0.044113999999999993
+  rotation 0.32110487563299295 -0.005640515094029761 0.947026844093764 1.0277892208172236e-16
+  children [
+    DEF Plate Shape {
+      appearance BrushedAluminium {
+        colorOverride 1 0.5 0.4
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "Sandwich"
+  boundingObject USE Plate
+  physics Physics {
+  }
+}
+Robot {
+  translation 5.907092674148171e-06 0.009899303924098114 0.07232708710639145
+  rotation -0.9999998800951924 0.0004871641655936993 -4.980639141526998e-05 0.11039778875474504
+  children [
+    USE Plate
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2.5710532321576417e-06
+        anchor 0.15 -0.175 0
+      }
+      device [
+        RotationalMotor {
+          name "Wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.17500000000000004 -0.17500000006332686 -2.463082127346533e-05
+        rotation -1.285527926820693e-06 -0.9999999999983474 1.2855266160774053e-06 1.5707953071812386
+        children [
+          DEF Sandwhich_Wheel Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.05
+              radius 0.1
+            }
+          }
+        ]
+        name "Sandwich Wheel(1)"
+        boundingObject USE Sandwhich_Wheel
+        physics DEF Wheel_Physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -4.2331275962053825e-06
+        anchor -0.15 -0.175 0
+      }
+      device [
+        RotationalMotor {
+          name "Wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.175 -0.1749999999150592 -5.02577818923728e-05
+        rotation 9.874387522291491e-07 -0.9999999999990249 -9.87435601571694e-07 1.5707996175919967
+        children [
+          DEF Sandwhich_Wheel Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.05
+              radius 0.1
+            }
+          }
+        ]
+        name "Sandwich Wheel(2)"
+        boundingObject USE Sandwhich_Wheel
+        physics DEF Wheel_Physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE Plate
+  physics Physics {
+  }
+  controller "SandwichTest"
+}
