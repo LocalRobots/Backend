@@ -1,0 +1,7 @@
+# .gitignore file
+# rule applied recursively
+*.o
+# rule applied locally
+/*.class
+# exception breaking the recursion
+!foo.o
