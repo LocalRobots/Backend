@@ -4,12 +4,14 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/CementTiles.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/street_furniture/protos/Bench.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.3200159454936794 -0.18349787519093716 -0.9294720675900905 4.1934354970021515
-  position 1.1892590139552364 -3.1879861943710854 2.8341924178237776
+  orientation -0.34212558105414687 0.28071448391701076 0.896743812528176 1.804700719022702
+  position 0.9997669381488941 -4.03728644843017 4.7447745117346996
 }
 TexturedBackground {
 }
@@ -17,15 +19,54 @@ TexturedBackgroundLight {
 }
 RectangleArena {
   floorSize 10 10
+  wallThickness 0.1
+  wallHeight 0.5
 }
 Robot {
   translation -0.59998 0.0248868 0.293629
   children [
+    DistanceSensor {
+      translation 0.27 0.13 0
+      rotation 0 0 1 0.261799
+      children [
+        Shape {
+          appearance CementTiles {
+          }
+          geometry Box {
+            size 0.05 0.15 0.15
+          }
+        }
+      ]
+      name "left distance sensor"
+      lookupTable [
+        0 0 0
+        0.5 1000 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.27 -0.11 0
+      rotation 0 0 -1 0.26180530717958606
+      children [
+        Shape {
+          appearance CementTiles {
+          }
+          geometry Box {
+            size 0.05 0.15 0.15
+          }
+        }
+      ]
+      name "right distance sensor"
+      lookupTable [
+        0 0 0
+        0.5 1000 0
+      ]
+    }
     Track {
       translation 0 0.3 -0.125
       children [
         TrackWheel {
           position 0.175 0
+          rotation 0.8795535779922308 0.3364406870919223 -0.3364419229379422 1.6987898872530238
           children [
             Shape {
               geometry Box {
@@ -44,6 +85,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
+          rotation 0.8795535779922308 0.3364406870919223 -0.3364419229379422 1.6987898872530238
           children [
             Shape {
               geometry Box {
@@ -113,6 +155,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
+          rotation 0.6833681874555874 -0.5162392674211925 0.5162411637462627 1.9426435874812342
           children [
             Shape {
               geometry Box {
@@ -131,6 +174,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
+          rotation 0.6833681874555874 -0.5162392674211925 0.5162411637462627 1.9426435874812342
           children [
             Shape {
               geometry Box {
@@ -208,4 +252,13 @@ Robot {
   physics Physics {
   }
   controller "trackController"
+}
+Bench {
+  translation 2.87 0 0
+  rotation 0 0 1 2.61799
+}
+Bench {
+  translation 2.39942 2.71111 0
+  rotation 0 0 1 -1.3090053071795866
+  name "bench(1)"
 }

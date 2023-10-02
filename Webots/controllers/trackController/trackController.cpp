@@ -9,6 +9,10 @@
 // and/or to add some other includes
 #include <webots/Robot.hpp>
 #include <webots/Motor.hpp>
+#include <webots/DistanceSensor.hpp>
+
+#define TIME_STEP 64
+#define MAX_SPEED 2.0
 
 // All the webots classes are defined in the "webots" namespace
 using namespace webots;
@@ -20,44 +24,62 @@ using namespace webots;
 // a controller program.
 // The arguments of the main function can be specified by the
 // "controllerArgs" field of the Robot node
-int main(int argc, char **argv) {
-  // create the Robot instance.
-  //console.writeline("Using Controller);
-  
-  Robot *robot = new Robot();
-  
-  Motor *leftMotor, *rightMotor;
-  leftMotor = robot->getMotor("leftMotor");
-  rightMotor = robot->getMotor("rightMotor");
-  leftMotor->setPosition(INFINITY);
-  rightMotor->setPosition(INFINITY);
-  leftMotor->setVelocity(0.1);
-  rightMotor->setVelocity(0.1);
+int main(int argc, char** argv) {
+    // create the Robot instance.
+    //console.writeline("Using Controller);
 
-  // get the time step of the current world.
-  /*int timeStep = (int)robot->getBasicTimeStep();
+    Robot* robot = new Robot();
 
-  // You should insert a getDevice-like function in order to get the
-  // instance of a device of the robot. Something like:
-  //  Motor *motor = robot->getMotor("motorname");
-  //  DistanceSensor *ds = robot->getDistanceSensor("dsname");
-  //  ds->enable(timeStep);
+    Motor* leftMotor, * rightMotor;
+    DistanceSensor* dsl = robot->getDistanceSensor("left distance sensor");
+    DistanceSensor* dsr = robot->getDistanceSensor("right distance sensor");
+    leftMotor = robot->getMotor("leftMotor");
+    rightMotor = robot->getMotor("rightMotor");
+    leftMotor->setPosition(INFINITY);
+    rightMotor->setPosition(INFINITY);
+    leftMotor->setVelocity(0.1);
+    rightMotor->setVelocity(0.1);
+    dsl->enable(TIME_STEP);
+    dsr->enable(TIME_STEP);
 
-  // Main loop:
-  // - perform simulation steps until Webots is stopping the controller
-  while (robot->step(timeStep) != -1) {
-    // Read the sensors:
-    // Enter here functions to read sensor data, like:
-    //  double val = ds->getValue();
+    //int turnfullstep = 0;
+    //bool turnFull = false;
+    while (robot->step(TIME_STEP) != -1) {
+        bool leftSensor = (dsl->getValue() < 950.0);
+        bool rightSensor = (dsr->getValue() < 950.0);
 
-    // Process sensor data here.
-
-    // Enter here functions to send actuator commands, like:
-    //  motor->setPosition(10.0);
-  };*/
-
-  // Enter here exit cleanup code.
-
-  delete robot;
-  return 0;
+        /*if (turnFull) {
+            //Left
+            leftMotor->setVelocity(-MAX_SPEED);
+            rightMotor->setVelocity(MAX_SPEED);
+            turnfullstep++;
+            if (turnfullstep > 15) {
+                turnfullstep = 0;
+                turnFull = false;
+            }
+        }
+        else if (leftSensor && rightSensor) {
+            turnFull = true;
+            //Left
+            leftMotor->setVelocity(-MAX_SPEED);
+            rightMotor->setVelocity(MAX_SPEED);
+        }
+        else */if (leftSensor) {
+            //Left
+            leftMotor->setVelocity(-MAX_SPEED);
+            rightMotor->setVelocity(MAX_SPEED);
+        }
+        else if (rightSensor) {
+            //Right
+            leftMotor->setVelocity(-MAX_SPEED);
+            rightMotor->setVelocity(MAX_SPEED);
+        }
+        else {
+            //Foraward
+            leftMotor->setVelocity(MAX_SPEED);
+            rightMotor->setVelocity(MAX_SPEED);;
+        }
+    }
+    delete robot;
+    return 0;  // EXIT_SUCCESS
 }
