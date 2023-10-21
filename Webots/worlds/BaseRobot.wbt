@@ -5,14 +5,15 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/CementTiles.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/street_furniture/protos/Bench.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BakelitePlastic.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/CircleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.20346163355955785 -0.23927229615382126 -0.9493956667072767 4.713095385043199
-  position -0.6282810094456429 -0.9733082580875537 1.1010728003633188
+  orientation -0.03404871326643965 -0.999417071535169 -0.0024904314820267124 5.5457013897673235
+  position -5.485786569185612 0.1915966925323017 5.971275015985018
 }
 TexturedBackground {
 }
@@ -20,11 +21,15 @@ TexturedBackgroundLight {
 }
 RectangleArena {
   floorSize 10 10
+  floorTileSize 1 1
+  floorAppearance Parquetry {
+    type "dark strip"
+  }
   wallThickness 0.1
   wallHeight 0.5
 }
 Robot {
-  translation -0.59998 0.0248868 0.293629
+  translation 0 0 0.4
   children [
     Solid {
       translation 0 0 0.2
@@ -38,17 +43,18 @@ Robot {
           device [
             RotationalMotor {
               name "camera motor"
+              maxPosition 1.75
             }
           ]
           endPoint Solid {
-            translation 0.10000001585340829 0 0.04996018366446334
-            rotation 0 1 0 1.57
+            translation 0.09998747870966607 -6.170639877511876e-06 0.049951635625651754
+            rotation 8.061402666508011e-06 0.9999999997400977 -2.1326473543421014e-05 1.5700000003756482
             children [
               Camera {
                 translation -7.13725e-07 0 0.16
                 rotation 0 1 0 -1.5707953071795862
               }
-              Shape {
+              DEF CameraMount Shape {
                 appearance BakelitePlastic {
                 }
                 geometry Box {
@@ -56,6 +62,9 @@ Robot {
                 }
               }
             ]
+            boundingObject USE CameraMount
+            physics Physics {
+            }
           }
         }
         Shape {
@@ -67,6 +76,11 @@ Robot {
         }
       ]
       name "Camera Joint"
+      boundingObject Box {
+        size 0.05 0.1 0.025
+      }
+      physics Physics {
+      }
     }
     TouchSensor {
       translation 0.25 0.1 0
@@ -103,7 +117,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.2013943978978304 0.6926170558994189 -0.6926196000494003 2.744122141777874
+          rotation 0.12960576353919348 0.7011414744994178 -0.7011440499599244 2.8838189900965396
           children [
             Shape {
               geometry Box {
@@ -122,7 +136,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.2013943978978304 0.6926170558994189 -0.6926196000494003 2.744122141777874
+          rotation 0.12960576353919348 0.7011414744994178 -0.7011440499599244 2.8838189900965396
           children [
             Shape {
               geometry Box {
@@ -192,7 +206,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.36337976156201446 -0.6587685331909693 0.6587709530364497 2.444506309755461
+          rotation 0.8409085313766346 -0.38266941739439037 0.3826708230960775 1.7432117484151852
           children [
             Shape {
               geometry Box {
@@ -211,7 +225,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.36337976156201446 -0.6587685331909693 0.6587709530364497 2.444506309755461
+          rotation 0.8409085313766346 -0.38266941739439037 0.3826708230960775 1.7432117484151852
           children [
             Shape {
               geometry Box {
@@ -290,12 +304,13 @@ Robot {
   }
   controller "BasicController"
 }
-Bench {
-  translation 2.87 0 0
-  rotation 0 0 1 2.61799
-}
-Bench {
-  translation 2.39942 2.71111 0
-  rotation 0 0 1 -1.3090053071795866
-  name "bench(1)"
+CircleArena {
+  translation 0 0 0.1
+  radius 2.5
+  floorAppearance Parquetry {
+    type "chequered"
+    IBLStrength 10
+  }
+  floorTileSize 1 1
+  wallHeight 0.01
 }
