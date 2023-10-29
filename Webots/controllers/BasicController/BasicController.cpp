@@ -10,7 +10,7 @@
 // All the webots classes are defined in the "webots" namespace
 using namespace webots;
 
-//All components of the robot
+// All components of the robot
 static Motor* leftMotor;
 static Motor* rightMotor;
 static TouchSensor* leftSensor;
@@ -18,7 +18,7 @@ static TouchSensor* rightSensor;
 static Camera* camera;
 static Motor* cameraMotor;
 
-//List of high level functions
+// High level functions
 static void MoveForward() {
     leftMotor->setVelocity(MAX_SPEED);
     rightMotor->setVelocity(MAX_SPEED);
@@ -74,30 +74,29 @@ int main(int argc, char** argv) {
     //Create the robot instance.
     Robot* robot = new Robot();
 
-    //Motors/track wheels
+    //Set up motor/track wheels
     leftMotor = robot->getMotor("leftMotor");
     rightMotor = robot->getMotor("rightMotor");
     leftMotor->setPosition(INFINITY);
     rightMotor->setPosition(INFINITY);
 
-    //Touch sensors
+    //Set up touch sensors
     leftSensor = robot->getTouchSensor("left sensor");
     rightSensor = robot->getTouchSensor("right sensor");
     leftSensor->enable(TIME_STEP);
     rightSensor->enable(TIME_STEP);
 
-    //Camera
+    //Set up camera and camera motor
     camera = robot->getCamera("camera");
     camera->enable(TIME_STEP);
     cameraMotor = robot->getMotor("camera motor");
     cameraMotor->setPosition(INFINITY);
     cameraMotor->setVelocity(0.0);
 
-
     //Local variables
-    //int stepNum = 0;
+    //int examlpeNum = 0;
 
-    //Robot AI
+    //Robot AI goes here
     for (int i = 0; i < 3; i++) {
         MoveForward();
         robot->step(TIME_STEP * 18);
@@ -110,21 +109,27 @@ int main(int argc, char** argv) {
     }
 
     MoveForward();
-    robot->step(TIME_STEP * 36);
+    robot->step(TIME_STEP * 18);
     ResetMotors();
     robot->step(TIME_STEP);
+    TurnLeft();
+    robot->step(TIME_STEP * 17);
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
         TurnLeft();
         robot->step(TIME_STEP * 18);
         ResetMotors();
         robot->step(TIME_STEP);
-        MoveForward();
+        MoveBack();
         robot->step(TIME_STEP * 18);
         ResetMotors();
         robot->step(TIME_STEP);
     }
-
+    
+    TurnLeft();
+    robot->step(TIME_STEP * 35);
+    ResetMotors();
+    robot->step(TIME_STEP);
 
     /*while (robot->step(TIME_STEP) != -1) {
         //Print any test messages here
@@ -137,7 +142,7 @@ int main(int argc, char** argv) {
         DriveForward(-75.0);
     }*/
 
-    //End
+    //End of AI
     ResetMotors();
     delete robot;
     return 0;  // EXIT_SUCCESS

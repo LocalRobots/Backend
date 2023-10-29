@@ -8,12 +8,13 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BakelitePlastic.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/CircleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/toys/protos/RubberDuck.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.03404871326643965 -0.999417071535169 -0.0024904314820267124 5.5457013897673235
-  position -5.485786569185612 0.1915966925323017 5.971275015985018
+  orientation -0.22823051225553959 -0.2402793729809883 0.9434917361564102 4.814961927979113
+  position -2.6233077193888255 14.443015451570107 6.19849957797821
 }
 TexturedBackground {
 }
@@ -24,6 +25,8 @@ RectangleArena {
   floorTileSize 1 1
   floorAppearance Parquetry {
     type "dark strip"
+    colorOverride 0 1 0
+    IBLStrength 10
   }
   wallThickness 0.1
   wallHeight 0.5
@@ -117,7 +120,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.12960576353919348 0.7011414744994178 -0.7011440499599244 2.8838189900965396
+          rotation 0.1978196262859132 0.6931319737121838 -0.6931345197535282 2.75099771150796
           children [
             Shape {
               geometry Box {
@@ -136,7 +139,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.12960576353919348 0.7011414744994178 -0.7011440499599244 2.8838189900965396
+          rotation 0.1978196262859132 0.6931319737121838 -0.6931345197535282 2.75099771150796
           children [
             Shape {
               geometry Box {
@@ -206,7 +209,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.8409085313766346 -0.38266941739439037 0.3826708230960775 1.7432117484151852
+          rotation 0.23583007321750035 0.6871610828773356 -0.687163606970768 2.6783974022353587
           children [
             Shape {
               geometry Box {
@@ -225,7 +228,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.8409085313766346 -0.38266941739439037 0.3826708230960775 1.7432117484151852
+          rotation 0.23583007321750035 0.6871610828773356 -0.687163606970768 2.6783974022353587
           children [
             Shape {
               geometry Box {
@@ -308,9 +311,62 @@ CircleArena {
   translation 0 0 0.1
   radius 2.5
   floorAppearance Parquetry {
-    type "chequered"
-    IBLStrength 10
+    type "dark strip"
+    IBLStrength 1000
   }
   floorTileSize 1 1
+  wallThickness 0.05
   wallHeight 0.01
+  wallAppearance BrushedAluminium {
+    colorOverride 0 0 0
+  }
+}
+RubberDuck {
+  translation 0 3.04 0.24
+  scale 4
+  bodyColor 0.137255 0.439216 1
+}
+Solid {
+  translation 0 3.76 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.717647 0.188235 0.0941176
+          specularColor 1 1 1
+        }
+      }
+      geometry Box {
+        size 0.35 0.35 0.35
+      }
+    }
+  ]
+  name "Box"
+  boundingObject Box {
+    size 0.35 0.35 0.35
+  }
+  physics Physics {
+  }
+}
+Solid {
+  translation 0 4.41 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.172549 0.34902 0.521569
+          specularColor 1 1 1
+        }
+      }
+      geometry Sphere {
+        radius 0.175
+      }
+    }
+  ]
+  name "Ball"
+  boundingObject Sphere {
+    radius 0.175
+  }
+  physics Physics {
+  }
 }

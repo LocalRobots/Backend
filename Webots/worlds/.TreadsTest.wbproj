@@ -5,7 +5,7 @@ sceneTreePerspectives: 000000ff000000010000000300000023000000c0000000fa010000000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 1 "../../../../../../Users/pyrog/Documents/GitHub/AI-Robots-Capstone/Webots/controllers/trackController/trackController.cpp" "../../../../../../Users/pyrog/Documents/GitHub/AI-Robots-Capstone/Webots/controllers/BasicController/BasicController.cpp"
+textFiles: 1 "controllers/trackController/trackController.cpp" "controllers/BasicController/BasicController.cpp"
 globalOptionalRendering: AllBoundingObjects::DistanceSensorRays
 consoles: Console:All:All
 renderingDevicePerspectives: robot:camera;1;2.57813;0;0
