@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
     //Local variables
     //int examlpeNum = 0;
 
-    //Robot AI goes here
+    //*********Robot AI goes here*********
     MoveForward();
     robot->step(TIME_STEP);
 
