@@ -19,7 +19,7 @@ Now that GitHub is set up, let's open up the Webots world
 
 If you want to understand how Webots works, you will need to understand the node system. Nodes are shown in the left window, and nodes work both as objects and as variables. To understand it better, let's make a box.
 
-<img src="Images/Example1.png" width = "500" >
+<img src="Images\Example1.gif" width = "500" >
 
 * Click the Add Node button (+). Inside the Base Nodes dropdown, select solid and click Add
 * When selecting the Solid "solid" object you just added, click and drag the object so that it isn't inside the robot
@@ -54,11 +54,11 @@ robot->step(TIME_STEP*25);
   * If you changed something in the world, you will be asked if you want to save, hit discard. If you don't see the popup
   * When the simulation reloads, make sure you are in play mode by pressing the > button on the top. If you are not, then you won't see your robot move
 
-<img src="Images/Example2.png" width = "500" >
+<img src="Images/Example2.gif" width = "500" >
 
 Now that know the basics for coding, try the week 10 bonus point challenge where you move the robot in a forward square then make it go backward landing on the starting placement.
 
-<img src="Images/Example2.png" width = "500" >
+<img src="Images/Challenge1.png" width = "500" >
 
 It you cannot complete the bonus point challenge because it's too confusing or hard, fill out the form and explain why.
 
