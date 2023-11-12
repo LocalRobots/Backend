@@ -13,8 +13,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.38341180253317964 -0.15962117748295315 0.9096793222763798 3.9278144862753264
-  position 5.553797614728355 6.653995342392236 8.021838859542672
+  orientation 0.22912933287477613 -0.7940218324041348 -0.5630533531397713 5.241752278197609
+  position -5.107232025429134 -3.8691832551150234 7.007001453104619
 }
 TexturedBackground {
 }
@@ -32,7 +32,7 @@ RectangleArena {
   wallHeight 0.5
 }
 Robot {
-  translation 0 0 0.4
+  translation -2.47 0 0.4
   children [
     Solid {
       translation 0 0 0.2
@@ -120,7 +120,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.49981225397769785 -0.6124479386761057 0.6124501883297302 2.2146007897225584
+          rotation 0.02161468749162537 0.7069402852333477 -0.706942881991772 3.098370167582404
           children [
             Shape {
               geometry Box {
@@ -139,7 +139,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.49981225397769785 -0.6124479386761057 0.6124501883297302 2.2146007897225584
+          rotation 0.02161468749162537 0.7069402852333477 -0.706942881991772 3.098370167582404
           children [
             Shape {
               geometry Box {
@@ -209,7 +209,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.16998099073453346 0.6968152178665846 -0.6968177774271053 2.804850503859203
+          rotation 0.30930359687552583 0.6724313954472463 -0.6724338654297025 2.5416543303110006
           children [
             Shape {
               geometry Box {
@@ -228,7 +228,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.16998099073453346 0.6968152178665846 -0.6968177774271053 2.804850503859203
+          rotation 0.30930359687552583 0.6724313954472463 -0.6724338654297025 2.5416543303110006
           children [
             Shape {
               geometry Box {
@@ -307,7 +307,7 @@ Robot {
     density -1
     mass 2
   }
-  controller "BasicController"
+  controller "SecondChallengeController"
 }
 CircleArena {
   translation 0 0 0.1
@@ -324,14 +324,14 @@ CircleArena {
   }
 }
 RubberDuck {
-  translation 0 3.04 0.24
+  translation 0 4 0.24
   name "Evil duck"
   scale 4
   bodyColor 0.137255 0.439216 1
   immersionProperties []
 }
 Solid {
-  translation 0 3.76 0.3
+  translation 0 -0.9 0.3
   children [
     Shape {
       appearance Appearance {
@@ -356,7 +356,32 @@ Solid {
   }
 }
 Solid {
-  translation 0 4.41 0.3
+  translation 0 0.9 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.533333 0.435294 0.235294
+          emissiveColor 0.533333 0.435294 0.235294
+          specularColor 1 1 1
+        }
+      }
+      geometry Box {
+        size 0.35 0.35 0.35
+      }
+    }
+  ]
+  name "Box(1)"
+  boundingObject Box {
+    size 0.35 0.35 0.35
+  }
+  physics Physics {
+    density -1
+    mass 0.6
+  }
+}
+Solid {
+  translation -0.75 -0.9 0.3
   children [
     Shape {
       appearance Appearance {
@@ -372,6 +397,56 @@ Solid {
     }
   ]
   name "Ball"
+  boundingObject Sphere {
+    radius 0.175
+  }
+  physics Physics {
+    density -1
+    mass 0.13
+  }
+}
+Solid {
+  translation -0.75 0 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.172549 0.34902 0.521569
+          emissiveColor 0.172549 0.34902 0.521569
+          specularColor 1 1 1
+        }
+      }
+      geometry Sphere {
+        radius 0.175
+      }
+    }
+  ]
+  name "Ball(1)"
+  boundingObject Sphere {
+    radius 0.175
+  }
+  physics Physics {
+    density -1
+    mass 0.13
+  }
+}
+Solid {
+  translation -0.75 0.9 0.3
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.172549 0.34902 0.521569
+          emissiveColor 0.172549 0.34902 0.521569
+          specularColor 1 1 1
+        }
+      }
+      geometry Sphere {
+        radius 0.175
+      }
+    }
+  ]
+  name "Ball(2)"
   boundingObject Sphere {
     radius 0.175
   }

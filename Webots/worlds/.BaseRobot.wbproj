@@ -5,6 +5,6 @@ sceneTreePerspectives: 000000ff000000010000000300000023000000c0000000fa010000000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 0 "controllers/FirstChallengeController/FirstChallengeController.cpp" "controllers/BasicController/BasicController.cpp"
+textFiles: 2 "controllers/FirstChallengeController/FirstChallengeController.cpp" "controllers/BasicController/BasicController.cpp" "controllers/SecondChallengeController/SecondChallengeController.cpp"
 consoles: Console:All:All
 renderingDevicePerspectives: robot:camera;1;2.73438;0.00217155;0.0308642
