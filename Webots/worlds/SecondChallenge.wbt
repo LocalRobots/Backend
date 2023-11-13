@@ -32,7 +32,7 @@ RectangleArena {
   wallHeight 0.5
 }
 Robot {
-  translation -2.64 0 0.4
+  translation -3.26 0 0.4
   children [
     Solid {
       translation 0 0 0.2
@@ -120,7 +120,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.021614687491627843 0.7069402852333476 -0.7069428819917719 3.098370167582402
+          rotation 0.021614687491627708 0.7069402852333476 -0.7069428819917719 3.098370167582399
           children [
             Shape {
               geometry Box {
@@ -139,7 +139,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.021614687491627843 0.7069402852333476 -0.7069428819917719 3.098370167582402
+          rotation 0.021614687491627708 0.7069402852333476 -0.7069428819917719 3.098370167582399
           children [
             Shape {
               geometry Box {
@@ -324,7 +324,7 @@ CircleArena {
   }
 }
 RubberDuck {
-  translation -3.6 0.69 0.24
+  translation -4.16 0.69 0.24
   name "Evil duck"
   scale 4
   bodyColor 0.137255 0.439216 1
