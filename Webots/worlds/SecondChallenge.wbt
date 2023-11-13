@@ -13,8 +13,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.22912933287477613 -0.7940218324041348 -0.5630533531397713 5.241752278197609
-  position -5.107232025429134 -3.8691832551150234 7.007001453104619
+  orientation 0.2303457874314101 -0.7972066630111091 -0.5580343669195432 5.233796074663229
+  position -5.084484514601618 -3.8154453547435603 7.037151784630313
 }
 TexturedBackground {
 }
@@ -32,7 +32,7 @@ RectangleArena {
   wallHeight 0.5
 }
 Robot {
-  translation -2.47 0 0.4
+  translation -2.64 0 0.4
   children [
     Solid {
       translation 0 0 0.2
@@ -120,7 +120,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.02161468749162537 0.7069402852333477 -0.706942881991772 3.098370167582404
+          rotation 0.021614687491627843 0.7069402852333476 -0.7069428819917719 3.098370167582402
           children [
             Shape {
               geometry Box {
@@ -139,7 +139,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.02161468749162537 0.7069402852333477 -0.706942881991772 3.098370167582404
+          rotation 0.021614687491627843 0.7069402852333476 -0.7069428819917719 3.098370167582402
           children [
             Shape {
               geometry Box {
@@ -209,7 +209,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.30930359687552583 0.6724313954472463 -0.6724338654297025 2.5416543303110006
+          rotation 0.3093035968755259 0.6724313954472463 -0.6724338654297025 2.5416543303110015
           children [
             Shape {
               geometry Box {
@@ -228,7 +228,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.30930359687552583 0.6724313954472463 -0.6724338654297025 2.5416543303110006
+          rotation 0.3093035968755259 0.6724313954472463 -0.6724338654297025 2.5416543303110015
           children [
             Shape {
               geometry Box {
@@ -324,7 +324,7 @@ CircleArena {
   }
 }
 RubberDuck {
-  translation 0 4 0.24
+  translation -3.6 0.69 0.24
   name "Evil duck"
   scale 4
   bodyColor 0.137255 0.439216 1
@@ -381,7 +381,7 @@ Solid {
   }
 }
 Solid {
-  translation -0.75 -0.9 0.3
+  translation -0.75 -0.6 0.3
   children [
     Shape {
       appearance Appearance {
@@ -431,7 +431,7 @@ Solid {
   }
 }
 Solid {
-  translation -0.75 0.9 0.3
+  translation -0.75 0.6 0.3
   children [
     Shape {
       appearance Appearance {

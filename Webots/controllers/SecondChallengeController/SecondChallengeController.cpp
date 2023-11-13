@@ -101,18 +101,15 @@ int main(int argc, char** argv) {
     //Robot AI goes here
 
     while (robot->step(TIME_STEP) != -1) {
-        //Print any test messages here
-        
+        //Gets the RGB of the bottom middle pixel on the camera
         int red = camera->imageGetRed(camera->getImage(), width, width / 2, height-1);
         int green = camera->imageGetGreen(camera->getImage(), width, width / 2, height-1);
         int blue = camera->imageGetBlue(camera->getImage(), width, width / 2, height-1);
-        std::cout << imageT << std::endl;
+        
+        //Print any test messages here
+        std::cout << "Red: " << red << ", Green: " << green << ", Blue: " << blue << std::endl;
 
-        //Touch sensors are doubles of either 1 or 0
-        bool leftSensorActivated = leftSensor->getValue();
-        bool rightSensorActivated = leftSensor->getValue();
-
-        //DriveForward(0.0);
+        //MoveForward();
     }
 
     //End of AI
