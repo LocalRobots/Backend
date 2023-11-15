@@ -119,7 +119,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.08354071641558707 0.7046336995578861 -0.7046362878451102 2.974898900620828
+          rotation 0.2586548441496435 -0.6830425477689095 0.6830450567387781 2.6353791042665287
           children [
             Shape {
               geometry Box {
@@ -138,7 +138,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.08354071641558707 0.7046336995578861 -0.7046362878451102 2.974898900620828
+          rotation 0.2586548441496435 -0.6830425477689095 0.6830450567387781 2.6353791042665287
           children [
             Shape {
               geometry Box {
@@ -208,7 +208,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.12092161550172097 0.7019167840239385 -0.7019193623272874 2.900918810518909
+          rotation 0.2204774233572937 -0.6897050859192465 0.6897076193916184 2.707582913824341
           children [
             Shape {
               geometry Box {
@@ -227,7 +227,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.12092161550172097 0.7019167840239385 -0.7019193623272874 2.900918810518909
+          rotation 0.2204774233572937 -0.6897050859192465 0.6897076193916184 2.707582913824341
           children [
             Shape {
               geometry Box {
@@ -304,7 +304,7 @@ Robot {
   boundingObject USE Plate
   physics Physics {
   }
-  controller "FirstChallengeController"
+  controller "first_challenge_controller"
 }
 CircleArena {
   translation 0 0 0.1

@@ -120,7 +120,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.021614687491627708 0.7069402852333476 -0.7069428819917719 3.098370167582399
+          rotation 0.4815943613736808 0.6197031748321293 -0.6197054511589001 2.243965572848886
           children [
             Shape {
               geometry Box {
@@ -139,7 +139,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.021614687491627708 0.7069402852333476 -0.7069428819917719 3.098370167582399
+          rotation 0.4815943613736808 0.6197031748321293 -0.6197054511589001 2.243965572848886
           children [
             Shape {
               geometry Box {
@@ -209,7 +209,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.3093035968755259 0.6724313954472463 -0.6724338654297025 2.5416543303110015
+          rotation 0.7845637223852338 0.43843947892243135 -0.4384410893600792 1.811081320672586
           children [
             Shape {
               geometry Box {
@@ -228,7 +228,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.3093035968755259 0.6724313954472463 -0.6724338654297025 2.5416543303110015
+          rotation 0.7845637223852338 0.43843947892243135 -0.4384410893600792 1.811081320672586
           children [
             Shape {
               geometry Box {
@@ -307,7 +307,7 @@ Robot {
     density -1
     mass 2
   }
-  controller "SecondChallengeController"
+  controller "second_challenge_controller"
 }
 CircleArena {
   translation 0 0 0.1

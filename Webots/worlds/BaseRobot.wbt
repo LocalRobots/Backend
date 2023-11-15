@@ -120,7 +120,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.49981225397769785 -0.6124479386761057 0.6124501883297302 2.2146007897225584
+          rotation 0.8732095792737244 -0.344604235514003 0.34460550130607986 1.7059661816726286
           children [
             Shape {
               geometry Box {
@@ -139,7 +139,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.49981225397769785 -0.6124479386761057 0.6124501883297302 2.2146007897225584
+          rotation 0.8732095792737244 -0.344604235514003 0.34460550130607986 1.7059661816726286
           children [
             Shape {
               geometry Box {
@@ -209,7 +209,7 @@ Robot {
       children [
         TrackWheel {
           position 0.175 0
-          rotation 0.16998099073453346 0.6968152178665846 -0.6968177774271053 2.804850503859203
+          rotation 0.21306189057776292 -0.690869424808804 0.6908719625573048 2.7217482598977414
           children [
             Shape {
               geometry Box {
@@ -228,7 +228,7 @@ Robot {
         }
         TrackWheel {
           position -0.175 0
-          rotation 0.16998099073453346 0.6968152178665846 -0.6968177774271053 2.804850503859203
+          rotation 0.21306189057776292 -0.690869424808804 0.6908719625573048 2.7217482598977414
           children [
             Shape {
               geometry Box {
@@ -307,7 +307,7 @@ Robot {
     density -1
     mass 2
   }
-  controller "BasicController"
+  controller "basic_controller"
 }
 CircleArena {
   translation 0 0 0.1
