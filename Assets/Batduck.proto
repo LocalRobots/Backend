@@ -1,0 +1,238 @@
+#VRML_SIM R2023b utf8
+PROTO BatDuck[
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation 0 0 1 0 
+  field SFVec3f    duckSize 0.5 0.5 0.5
+]
+
+{
+  Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      scale IS duckSize
+      children [
+        DEF Horn Pose {
+          translation 0.011 -0.014 0.079
+          rotation -1 0 0 -0.26140530717958654
+          children [
+            DEF horns Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Cone {
+                bottomRadius 0.007
+                height 0.012
+              }
+            }
+          ]
+        }
+        DEF Horn Pose {
+          translation 0.011 0.014 0.079
+          rotation -1 0 0 0.261401
+          children [
+            USE horns
+          ]
+        }
+        DEF BEAK Pose {
+          translation 0.0394 0 0.05868
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.3 0.109804
+                roughness 0.7
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck/meshes/beak.obj"
+                ]
+              }
+            }
+          ]
+        }
+        DEF GEOM Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            roughness 0.7
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck/meshes/body.obj"
+            ]
+          }
+        }
+        DEF EYE Pose {
+          translation 0.0228 0.0103 0.067
+          rotation -0.8891627824530145 -0.14526896445777315 -0.4339198938350021 -2.580275307179586
+          children [
+            DEF EYE_GEOM Shape {
+              appearance PBRAppearance {
+                roughness 0.4
+                metalness 0
+              }
+              geometry Capsule {
+                height 0.003
+                radius 0.007
+              }
+            }
+          ]
+        }
+        DEF EYE Pose {
+          translation 0.0228 -0.0103 0.067
+          rotation 0.8951539520066981 0.08486039545024567 0.43760497653799363 -2.8136353071795863
+          children [
+            DEF EYE_GEOM Shape {
+              appearance PBRAppearance {
+                roughness 0.4
+                metalness 0
+              }
+              geometry Capsule {
+                height 0.003
+                radius 0.007
+              }
+            }
+          ]
+        }
+        DEF eyelid Pose {
+          translation 0.0228 0.0107 0.07
+          rotation -0.027221408790101154 -0.865705061553166 0.4998137065994802 -1.5707953071795862
+          children [
+            DEF eyelid_geo Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Capsule {
+                height 0.004
+                radius 0.0055
+              }
+            }
+          ]
+        }
+        DEF eyelid Pose {
+          translation 0.0228 -0.0108 0.07
+          rotation -0.6083640172331277 0.7071190200305608 0.36038301020856967 -1.7470553071795862
+          children [
+            DEF eyelid_geo Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Capsule {
+                height 0.004
+                radius 0.0055
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "BatDuck"
+  model "rubber duck"
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "water"
+      viscousResistanceForceCoefficient 400
+      viscousResistanceTorqueCoefficient 0.5
+    }
+  ]
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0 0 -0.009
+        children [
+          Box {
+            size 0.03 0.025 0.0025
+          }
+        ]
+      }
+      Pose {
+        translation 0.0185 0 0.03
+        children [
+          Box {
+            size 0.007 0.0125 0.0075
+          }
+        ]
+      }
+      Pose {
+        translation 0.005 0 0.0295
+        children [
+          Sphere {
+            radius 0.0125
+          }
+        ]
+      }
+      Pose {
+        translation -0.021 0 0.0065
+        rotation -0.06526396752413574 -0.06526396752413574 0.9957315045161609 1.575074
+        children [
+          Capsule {
+            height 0.02
+            radius 0.004
+            subdivision 16
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 0.0025
+        rotation -0.5773509358554485 -0.5773509358554485 -0.5773489358556708 -2.094397
+        children [
+          Capsule {
+            height 0.025
+            radius 0.0125
+            subdivision 16
+          }
+        ]
+      }
+      Pose {
+        translation 0.0065 0 0.017
+        children [
+          Cylinder {
+            height 0.0065
+            radius 0.009
+          }
+        ]
+      }
+      Pose {
+        translation 0 0.01 0
+        rotation -0.5773509358554485 -0.5773509358554485 -0.5773489358556708 -2.094397
+        children [
+          Capsule {
+            height 0.018
+            radius 0.009
+            subdivision 16
+          }
+        ]
+      }
+      Pose {
+        translation 0 -0.01 0
+        rotation -0.5773509358554485 -0.5773509358554485 -0.5773489358556708 -2.094397
+        children [
+          Capsule {
+            height 0.018
+            radius 0.009
+            subdivision 16
+          }
+        ]
+      }
+    ]
+  }
+  physics DEF evilDuck Physics {
+    mass 0.022
+    damping Damping {
+    }
+  }
+  recognitionColors [
+    0.87451 0.756863 0.113725
+  ]
+}
+
+}
