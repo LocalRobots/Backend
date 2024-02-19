@@ -1,0 +1,201 @@
+#VRML_SIM R2023b utf8
+  PROTO roboTest1 [
+    field SFVec3f    translation  0.21838 -0.187939 0.18
+    field SFRotation rotation     0 0 1 0
+    field SFFloat    bodyMass     1
+    field SFString   controller "<generic>"
+  ]
+  {
+    Robot {
+    translation IS translation
+    rotation IS rotation
+    children [
+    Camera {
+      translation 0.04 0 0.012
+      children [
+        DEF cameraBody Shape {
+          appearance Appearance {
+            material Material {
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      boundingObject USE cameraBody
+      physics Physics {
+      }
+      lens Lens {
+      }
+      focus Focus {
+      }
+      zoom Zoom {
+      }
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+    DistanceSensor {
+      translation 0.048 -0.005 0
+      rotation 0 0 -1 0.4
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.006 0 0
+        0.1 1000 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.048 0.005 0
+      rotation 0 0 -1 -0.4
+      children [
+        DEF sensor Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.6 0.4 0.5
+            }
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+      lookupTable [
+        0.006 0 0
+        0.1 1000 0
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 0.045 0
+        rotation 0.999999999996215 2.751329998684761e-06 -7.192349721398047e-09 1.5700053071795852
+        children [
+          DEF Wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.8 0.2 0.2
+              }
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE Wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 0.045 0
+        rotation 0.999999999992715 3.3977899997968337e-06 -1.739240000372875e-06 1.5707953071795862
+        children [
+          USE Wheel
+        ]
+        name "solid(1)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.03 -0.045 0
+        rotation 0.9999998424371894 -0.00039556793767275584 0.0003983109372412174 1.5707953071795813
+        children [
+          USE Wheel
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.03 -0.045 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.03 -0.045 0
+        rotation 0.9999998424371894 -0.0003955679376740907 0.00039831093724149245 1.570795307179579
+        children [
+          USE Wheel
+        ]
+        name "solid(3)"
+        boundingObject USE Wheel
+        physics USE wheel_physics
+      }
+    }
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 0
+        }
+      }
+      geometry Box {
+        size 0.1 0.08 0.015
+      }
+    }
+  ]
+  name "gentle giant camera"
+  boundingObject USE Body
+  physics Physics {
+    density -1
+    mass IS bodyMass
+  }
+  controller IS controller
+}
+  }

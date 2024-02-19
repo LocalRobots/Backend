@@ -1,0 +1,11 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck.proto"
+
+PROTO normalDuck [
+]
+{
+  RubberDuck {
+    bodyColor 0.28627450980392155 0.6196078431372549 0.8745098039215686
+  }
+}

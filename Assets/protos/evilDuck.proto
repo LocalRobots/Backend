@@ -1,0 +1,199 @@
+#VRML_SIM R2023b utf8
+PROTO evilDuck [
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation 0 0 1 0 
+  field SFVec3f    duckSize 0.5 0.5 0.5
+]
+{
+  Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Transform {
+      scale IS duckSize
+      children [
+        DEF Horn Pose {
+          translation 0.011 -0.017 0.08
+          rotation 1 0 0 0.785
+          children [
+            DEF horns Shape {
+              appearance PBRAppearance {
+                baseColor 0.1 0.6 0.8
+                metalness 0
+              }
+              geometry Cone {
+                bottomRadius 0.006
+                height 0.015
+              }
+            }
+          ]
+        }
+        DEF Horn Pose {
+          translation 0.011 0.017 0.08
+          rotation 1 0 0 -0.785
+          children [
+            USE horns
+          ]
+        }
+        DEF BEAK Pose {
+          translation 0.0394 0 0.05868
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.7 0.109804
+                roughness 0.7
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck/meshes/beak.obj"
+                ]
+              }
+            }
+          ]
+        }
+        DEF GEOM Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.6 0.8
+            roughness 0.7
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck/meshes/body.obj"
+            ]
+          }
+        }
+        DEF EYE Pose {
+          translation 0.026677002 0.012248128 0.069200846
+          rotation -0.18117290235136482 0.4918957348778623 0.8515955410067332 -1.18424
+          children [
+            DEF EYE_GEOM Shape {
+              appearance PBRAppearance {
+                baseColor 1 0 0
+                baseColorMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck/textures/eye.jpg"
+                  ]
+                }
+                roughness 0.4
+                metalness 0
+              }
+              geometry Mesh {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/released/projects/objects/toys/protos/RubberDuck/meshes/eye.obj"
+                ]
+              }
+            }
+          ]
+        }
+        DEF EYE Pose {
+          translation 0.026708849 -0.012243724 0.069238147
+          rotation -0.23056699185533644 0.18891399332670777 0.954541966281283 -2.20978
+          children [
+            USE EYE_GEOM
+          ]
+        }
+      ]
+    }
+  ]
+  name "evilDuck"
+  model "rubber duck"
+  immersionProperties [
+    ImmersionProperties {
+      fluidName "water"
+      viscousResistanceForceCoefficient 400
+      viscousResistanceTorqueCoefficient 0.5
+    }
+  ]
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0 0 -0.009
+        children [
+          Box {
+            size 0.03 0.025 0.0025
+          }
+        ]
+      }
+      Pose {
+        translation 0.0185 0 0.03
+        children [
+          Box {
+            size 0.007 0.0125 0.0075
+          }
+        ]
+      }
+      Pose {
+        translation 0.005 0 0.0295
+        children [
+          Sphere {
+            radius 0.0125
+          }
+        ]
+      }
+      Pose {
+        translation -0.021 0 0.0065
+        rotation -0.06526396752413574 -0.06526396752413574 0.9957315045161609 1.575074
+        children [
+          Capsule {
+            height 0.02
+            radius 0.004
+            subdivision 16
+          }
+        ]
+      }
+      Pose {
+        translation 0 0 0.0025
+        rotation -0.5773509358554485 -0.5773509358554485 -0.5773489358556708 -2.094397
+        children [
+          Capsule {
+            height 0.025
+            radius 0.0125
+            subdivision 16
+          }
+        ]
+      }
+      Pose {
+        translation 0.0065 0 0.017
+        children [
+          Cylinder {
+            height 0.0065
+            radius 0.009
+          }
+        ]
+      }
+      Pose {
+        translation 0 0.01 0
+        rotation -0.5773509358554485 -0.5773509358554485 -0.5773489358556708 -2.094397
+        children [
+          Capsule {
+            height 0.018
+            radius 0.009
+            subdivision 16
+          }
+        ]
+      }
+      Pose {
+        translation 0 -0.01 0
+        rotation -0.5773509358554485 -0.5773509358554485 -0.5773489358556708 -2.094397
+        children [
+          Capsule {
+            height 0.018
+            radius 0.009
+            subdivision 16
+          }
+        ]
+      }
+    ]
+  }
+  physics DEF evilDuck Physics {
+    mass 0.022
+    damping Damping {
+    }
+  }
+  recognitionColors [
+    0.87451 0.756863 0.113725
+  ]
+}
+}

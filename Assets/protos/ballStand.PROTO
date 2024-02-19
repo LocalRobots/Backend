@@ -1,0 +1,37 @@
+#VRML_SIM R2023b utf8
+PROTO ballStand [
+   field SFVec3f       translation 0 0 0
+   field SFRotation    rotation 0 0 1 0
+   field SFFloat       mass 0.03                    
+]
+{
+  DEF ballStand Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.6 0.5
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [
+          "../protos/MeshReference/webotsStand3.dae"
+        ]
+      }
+    }
+  ]
+  name "ballStand"
+  boundingObject Cylinder {
+    height 0.002
+    radius 0.025
+  }
+  physics Physics {
+    mass IS mass
+    damping Damping {
+    }
+  }
+}
+
+}

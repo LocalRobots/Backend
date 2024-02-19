@@ -1,0 +1,115 @@
+#VRML_SIM R2023b utf8
+PROTO GrichnickBOX[
+    field SFVec3f       translation 0 0 0
+    field SFRotation    rotation 0 0 1 0
+    field SFVec3f       bottomPartBoxVOL 0.075 0.075 0.056
+    field SFVec3f       beamVOL 0.01 0.01 0.012
+    field SFVec3f       topOfBoxVOL 0.075 0.075 0.007
+    field SFVec3f       boxColor 0.8 0.6 0.5
+
+]
+{
+  Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    DEF bottomPartBox Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.6 0.5
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size IS bottomPartBoxVOL
+      }
+    }
+    DEF upper_box Solid {
+      translation 0 0 0.0435
+      children [
+        DEF not_gap1 Solid {
+          translation -0.0325 0.0325 -0.0095
+          children [
+            DEF not_gap Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.6 0.5
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size IS beamVOL
+              }
+            }
+          ]
+          name "Beam1"
+        }
+        DEF not_gap2 Solid {
+          translation -0.0325 -0.0325 -0.0095
+          children [
+            DEF not_gap Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.6 0.5
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size IS beamVOL
+              }
+            }
+          ]
+          name "Beam2"
+        }
+        DEF not_gap3 Solid {
+          translation 0.0325 0.0325 -0.0095
+          children [
+            DEF not_gap Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.6 0.5
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size IS beamVOL
+              }
+            }
+          ]
+          name "Beam3"
+        }
+        DEF not_gap4 Solid {
+          translation 0.0325 -0.0325 -0.0095
+          children [
+            DEF not_gap Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.6 0.5
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size IS beamVOL
+              }
+            }
+          ]
+          name "Beam4"
+        }
+        DEF Box_bottom Shape {
+          appearance PBRAppearance {
+            baseColor 0.8 0.6 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size IS topOfBoxVOL
+          }
+        }
+      ]
+      name "upperBox"
+    }
+  ]
+  name "GrichnickBOX"
+  boundingObject USE bottomPartBox
+  physics DEF cubePhys Physics {
+    mass 0.06
+    damping Damping {
+    }
+  }
+}
+}

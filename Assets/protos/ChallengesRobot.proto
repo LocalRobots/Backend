@@ -1,0 +1,290 @@
+#VRML_SIM R2023b utf8
+PROTO ChallengesRobot [
+    field SFVec3f    translation  0 0 0
+    field SFRotation rotation     0 0 1 0
+    field SFFloat    bodyMass     1
+    field SFString   controller   "<generic>"
+  ]
+
+{
+  Robot {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Solid {
+      translation 0 0 0.2
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 1.57
+            axis 0 1 0
+            anchor 0 0 0.05
+          }
+          device [
+            RotationalMotor {
+              name "camera motor"
+              maxPosition 1.75
+            }
+          ]
+          endPoint Solid {
+            translation 0.09998747870966607 -6.170639877511876e-06 0.049951635625651754
+            rotation 8.061402666508011e-06 0.9999999997400977 -2.1326473543421014e-05 1.5700000003756482
+            children [
+              Camera {
+                translation -7.13725e-07 0 0.16
+                rotation 0 1 0 -1.5707953071795862
+              }
+              DEF CameraMount Shape {
+                appearance BakelitePlastic {
+                }
+                geometry Box {
+                  size 0.05 0.1 0.3
+                }
+              }
+            ]
+            boundingObject USE CameraMount
+            physics Physics {
+            }
+          }
+        }
+        Shape {
+          appearance BakelitePlastic {
+          }
+          geometry Box {
+            size 0.05 0.1 0.1
+          }
+        }
+      ]
+      name "Camera Joint"
+      boundingObject Box {
+        size 0.05 0.1 0.025
+      }
+      physics Physics {
+      }
+    }
+    TouchSensor {
+      translation 0.25 0.1 0
+      rotation 0 0 1 0.261799
+      children [
+        DEF TouchSensor Shape {
+          appearance CementTiles {
+          }
+          geometry Box {
+            size 0.05 0.15 0.15
+          }
+        }
+      ]
+      name "left sensor"
+      boundingObject USE TouchSensor
+    }
+    TouchSensor {
+      translation 0.25 -0.1 0
+      rotation 0 0 1 -0.261799
+      children [
+        DEF TouchSensor Shape {
+          appearance CementTiles {
+          }
+          geometry Box {
+            size 0.05 0.15 0.15
+          }
+        }
+      ]
+      name "right sensor"
+      boundingObject USE TouchSensor
+    }
+    Track {
+      translation 0 0.3 -0.125
+      children [
+        TrackWheel {
+          position 0.175 0
+          rotation 0.021614687491627843 0.7069402852333476 -0.7069428819917719 3.098370167582402
+          children [
+            Shape {
+              geometry Box {
+                size 0.1 0.1 0.1
+              }
+            }
+            DEF Sandwhich_Wheel Shape {
+              appearance PBRAppearance {
+              }
+              geometry Cylinder {
+                height 0.05
+                radius 0.1
+              }
+            }
+          ]
+        }
+        TrackWheel {
+          position -0.175 0
+          rotation 0.021614687491627843 0.7069402852333476 -0.7069428819917719 3.098370167582402
+          children [
+            Shape {
+              geometry Box {
+                size 0.1 0.1 0.1
+              }
+            }
+            DEF Sandwhich_Wheel Shape {
+              appearance PBRAppearance {
+              }
+              geometry Cylinder {
+                height 0.05
+                radius 0.1
+              }
+            }
+          ]
+        }
+      ]
+      name "track1"
+      boundingObject Group {
+        children [
+          Pose {
+            translation 0.175 0 0
+            rotation 1 0 0 1.5708
+            children [
+              Cylinder {
+                height 0.1
+                radius 0.1
+              }
+            ]
+          }
+          Pose {
+            translation -0.175 0 0
+            rotation 1 0 0 1.5708
+            children [
+              Cylinder {
+                height 0.1
+                radius 0.1
+              }
+            ]
+          }
+          DEF Track_Box_Shape Box {
+            size 0.35 0.1 0.2
+          }
+        ]
+      }
+      physics Physics {
+      }
+      device [
+        LinearMotor {
+          name "leftMotor"
+        }
+      ]
+      animatedGeometry Shape {
+        appearance Appearance {
+          material Material {
+            diffuseColor 0 0 0
+          }
+        }
+        geometry DEF Track_Box_Shape Box {
+          size 0.05 0.1 0.01
+        }
+      }
+      geometriesCount 25
+    }
+    Track {
+      translation 0 -0.3 -0.125
+      children [
+        TrackWheel {
+          position 0.175 0
+          rotation 0.3093035968755259 0.6724313954472463 -0.6724338654297025 2.5416543303110015
+          children [
+            Shape {
+              geometry Box {
+                size 0.1 0.1 0.1
+              }
+            }
+            DEF Sandwhich_Wheel Shape {
+              appearance PBRAppearance {
+              }
+              geometry Cylinder {
+                height 0.05
+                radius 0.1
+              }
+            }
+          ]
+        }
+        TrackWheel {
+          position -0.175 0
+          rotation 0.3093035968755259 0.6724313954472463 -0.6724338654297025 2.5416543303110015
+          children [
+            Shape {
+              geometry Box {
+                size 0.1 0.1 0.1
+              }
+            }
+            DEF Sandwhich_Wheel Shape {
+              appearance PBRAppearance {
+              }
+              geometry Cylinder {
+                height 0.05
+                radius 0.1
+              }
+            }
+          ]
+        }
+      ]
+      name "track2"
+      boundingObject Group {
+        children [
+          Pose {
+            translation 0.175 0 0
+            rotation 1 0 0 1.5708
+            children [
+              Cylinder {
+                height 0.1
+                radius 0.1
+              }
+            ]
+          }
+          Pose {
+            translation -0.175 0 0
+            rotation 1 0 0 1.5708
+            children [
+              Cylinder {
+                height 0.1
+                radius 0.1
+              }
+            ]
+          }
+          DEF Track_Box_Shape Box {
+            size 0.35 0.1 0.2
+          }
+        ]
+      }
+      physics Physics {
+      }
+      device [
+        LinearMotor {
+          name "rightMotor"
+        }
+      ]
+      animatedGeometry Shape {
+        appearance Appearance {
+          material Material {
+            diffuseColor 0 0 0
+          }
+        }
+        geometry DEF Track_Box_Shape Box {
+          size 0.05 0.1 0.01
+        }
+      }
+      geometriesCount 25
+    }
+    DEF Plate Shape {
+      appearance BrushedAluminium {
+        colorOverride 1 0.5 0.4
+      }
+      geometry Box {
+        size 0.5 0.5 0.35
+      }
+    }
+  ]
+  boundingObject USE Plate
+  physics Physics {
+    density -1
+    mass IS bodyMass
+  }
+  controller IS controller
+}
+
+}
