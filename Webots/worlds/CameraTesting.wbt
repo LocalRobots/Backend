@@ -9,8 +9,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.11946948483445868 0.022684405669603017 -0.9925786920606375 2.5334494100550486
-  position 0.8712566856110618 0.4907514946407595 0.17520581026867185
+  orientation 0.23829206691490085 -0.19568129041836732 -0.9512758398202001 4.357983575436451
+  position 0.11123355963327806 -0.21100985102883066 0.13999618081834908
 }
 TexturedBackground {
 }
@@ -105,23 +105,23 @@ DEF Arena_Group Group {
   ]
 }
 RubberDuck {
-  translation 0.20567 0.07 0.0118
-  rotation 0 0 1 -0.785395307179586
+  translation 0.20566999543607536 0.0700000045638999 0.010209277242055191
+  rotation 4.927643869135695e-08 1.1896457769650729e-07 -0.9999999999999918 0.7853953071799428
   name "Evil duck"
   scale 0.5
-  bodyColor 0.137255 0.439216 1
+  bodyColor 1 1 0.054902
   immersionProperties []
 }
 Solid {
-  translation 0.12 0.17 0.0385
-  rotation 0 0 1 -1.047195307179586
+  translation 0.12 0.17 0.037228980889338084
+  rotation -7.237631223086337e-17 -1.9907304606872118e-17 -1 1.047195307179586
   children [
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0.666667 0 0
-          emissiveColor 0.666667 0 0
-          specularColor 1 1 1
+          ambientIntensity 0.7
+          diffuseColor 1 0.847059 0.384314
+          shininess 0
         }
       }
       geometry Box {
@@ -139,7 +139,7 @@ Solid {
   }
 }
 Solid {
-  translation 0.20149 3.12811e-08 0.026
+  translation 0.20149 3.12811e-08 0.02476017053108504
   children [
     Shape {
       appearance Appearance {
@@ -164,7 +164,8 @@ Solid {
   }
 }
 DEF ScaleRobot Robot {
-  translation 0.02 0 0.07
+  translation 0.020039492994123116 9.865014985298289e-10 0.06687264779414356
+  rotation -2.5368958624391044e-05 0.999999999678208 1.3297426873508307e-08 0.000580371712266268
   children [
     DEF CameraArm_HingeJoint HingeJoint {
       jointParameters HingeJointParameters {
@@ -282,7 +283,7 @@ DEF ScaleRobot Robot {
               children [
                 DEF Front1_TrackWheel TrackWheel {
                   position 0.0335 0
-                  rotation 0.5982193432168241 0.5666265342854658 -0.5666286156247966 2.063377559741865
+                  rotation 0.9724969665038581 -0.164695857371592 0.16469646233428925 1.5986847069816492
                   radius 0.03
                   children [
                     DEF Decal_Cylinder Shape {
@@ -309,7 +310,7 @@ DEF ScaleRobot Robot {
                 }
                 DEF Back1_TrackWheel TrackWheel {
                   position -0.03 0
-                  rotation 0.5982193432168241 0.5666265342854658 -0.5666286156247966 2.063377559741865
+                  rotation 0.9724969665038581 -0.164695857371592 0.16469646233428925 1.5986847069816492
                   radius 0.03
                   children [
                     DEF Decal_Cylinder Shape {
@@ -337,9 +338,6 @@ DEF ScaleRobot Robot {
               ]
               boundingObject Group {
                 children [
-                  Box {
-                    size 0.07 0.017 0.06
-                  }
                   Pose {
                     translation 0.034 0 0
                     rotation 1 0 0 -1.5707953071795862
@@ -384,7 +382,7 @@ DEF ScaleRobot Robot {
               children [
                 DEF Front1_TrackWheel TrackWheel {
                   position 0.0335 0
-                  rotation 0.8948746518928268 -0.3155935880999833 0.315594747342015 1.6816439235591587
+                  rotation 0.15844778352997066 -0.6981728721841717 0.698175436720989 2.8273109387794904
                   radius 0.03
                   children [
                     DEF Decal_Cylinder Shape {
@@ -411,7 +409,7 @@ DEF ScaleRobot Robot {
                 }
                 DEF Back1_TrackWheel TrackWheel {
                   position -0.03 0
-                  rotation 0.8948746518928268 -0.3155935880999833 0.315594747342015 1.6816439235591587
+                  rotation 0.15844778352997066 -0.6981728721841717 0.698175436720989 2.8273109387794904
                   radius 0.03
                   children [
                     DEF Decal_Cylinder Shape {
@@ -440,9 +438,6 @@ DEF ScaleRobot Robot {
               name "track(1)"
               boundingObject Group {
                 children [
-                  Box {
-                    size 0.07 0.017 0.06
-                  }
                   Pose {
                     translation 0.034 0 0
                     rotation 1 0 0 -1.5707953071795862
@@ -959,6 +954,7 @@ DEF ScaleRobot Robot {
     size 0.1143 0.0635 0.1016
   }
   physics Physics {
+    mass 0.5
   }
   controller "Camera_Tester"
 }
