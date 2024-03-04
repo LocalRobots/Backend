@@ -1,0 +1,82 @@
+#VRML_SIM R2023b utf8
+PROTO box_collision_fixed[
+    field SFVec3f       translation 0 0 0
+    field SFRotation    rotation 0 0 1 0
+    field SFVec3f       boxColor 0.8 0.6 0.5
+    ]
+{
+  Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    DEF DA_GERP Group {
+      children [
+        DEF bottomPartBox Shape {
+          appearance PBRAppearance {
+            baseColor 0.8 0.6 0.5
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.075 0.075 0.056
+          }
+        }
+        DEF box_bottom Pose {
+          translation 0 0 -0.0435
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.6 0.5
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.075 0.075 0.007
+              }
+            }
+          ]
+        }
+        DEF beam1 Pose {
+          translation 0.0325 0.0325 -0.034
+          children [
+            DEF beam Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.6 0.5
+                metalness 0
+              }
+              geometry Box {
+                size 0.01 0.01 0.012
+              }
+            }
+          ]
+        }
+        DEF beam2 Pose {
+          translation -0.0325 0.0325 -0.034
+          children [
+            USE beam
+          ]
+        }
+        DEF beam3 Pose {
+          translation -0.0325 -0.0325 -0.034
+          children [
+            USE beam
+          ]
+        }
+        DEF beam4 Pose {
+          translation 0.0325 -0.0325 -0.034
+          children [
+            USE beam
+          ]
+        }
+      ]
+    }
+  ]
+  name "box_that_actually_works"
+  boundingObject USE DA_GERP
+  physics DEF cubePhys Physics {
+    mass 0.06
+    damping Damping {
+    }
+  }
+}
+}
