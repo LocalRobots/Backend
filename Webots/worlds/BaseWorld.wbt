@@ -9,8 +9,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.25753014691149045 -0.5150858672801298 0.8175357929534479 5.302813249009098
-  position -1.6432579791164483 1.6921247342070442 1.2788490295067105
+  orientation -0.21716105659569768 -0.384326394808143 0.897292760336344 5.301216533760067
+  position -1.4513815154239174 1.6737966842071743 0.8551397726021199
 }
 TexturedBackground {
 }
@@ -175,7 +175,7 @@ DEF ScaleRobot Robot {
       }
       device [
         DEF Camera_RotationalMotor RotationalMotor {
-          name "CameraArm_rotational_motor"
+          name "camera_rotational_motor"
           minPosition -10
           maxPosition 10
         }
@@ -196,7 +196,7 @@ DEF ScaleRobot Robot {
                     }
                   }
                   Camera {
-                    name "CameraArm_camera"
+                    name "camera_camera"
                     boundingObject Box {
                       size 0.003 0.025 0.025
                     }
@@ -277,7 +277,7 @@ DEF ScaleRobot Robot {
             }
           ]
         }
-        DEF Track_Group Group {
+        DEF Track_Groups Group {
           children [
             DEF TrackGroup1_Track Track {
               translation -0.01 0.045 -0.037
@@ -365,7 +365,7 @@ DEF ScaleRobot Robot {
               }
               device [
                 LinearMotor {
-                  name "leftMotor"
+                  name "left_motor"
                 }
               ]
               animatedGeometry Shape {
@@ -465,7 +465,7 @@ DEF ScaleRobot Robot {
               }
               device [
                 LinearMotor {
-                  name "rightMotor"
+                  name "right_motor"
                 }
               ]
               animatedGeometry Shape {
@@ -477,22 +477,6 @@ DEF ScaleRobot Robot {
                 }
               }
               geometriesCount 0
-            }
-          ]
-        }
-        DEF WheelAxel_Transforms_Group Group {
-          children [
-            DEF WheelAxel1_Transform Pose {
-              translation 0.025 -0.03 0
-            }
-            DEF WheelAxel2_Transform Pose {
-              translation 0.025 0.03 0
-            }
-            DEF WheelAxel3_Transform Pose {
-              translation -0.025 0.03 0
-            }
-            DEF WheelAxel4_Transform Pose {
-              translation -0.025 -0.03 0
             }
           ]
         }
@@ -957,5 +941,5 @@ DEF ScaleRobot Robot {
   physics Physics {
     mass 0.5
   }
-  controller "Camera_Tester"
+  controller "basic_robot_controller"
 }

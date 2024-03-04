@@ -1,6 +1,5 @@
 from controller import Robot
 from controller import Motor
-from controller import Keyboard
 import math
 
 # High level functions
@@ -58,50 +57,31 @@ if __name__ == "__main__":
     camera_default_position = 0 #base position
     
     #Set up motor/track wheels
-    left_motor = robot.getDevice("leftMotor")
-    right_motor = robot.getDevice("rightMotor")
+    left_motor = robot.getDevice("left_motor")
+    right_motor = robot.getDevice("right_motor")
     left_motor.setPosition(math.inf)
     right_motor.setPosition(math.inf)
     left_motor.setVelocity(0)
     right_motor.setVelocity(0)
     
     #Set up camera and camera motor
-    camera = robot.getDevice("CameraArm_camera")
+    camera = robot.getDevice("camera_camera")
     camera.enable(time_step)
     width = camera.getWidth()
     height = camera.getWidth()
     
     #Setting maximum rotational values of camera motor
-    camera_motor = robot.getDevice("CameraArm_rotational_motor")
+    camera_motor = robot.getDevice("camera_rotational_motor")
     camera_motor.maxPosition = camera_max_position
     camera_motor.minPosition = camera_min_position
-    
-    #Keyboard interaction instance
-    keyboard = Keyboard()
-    keyboard.enable(time_step)
 
     #Main Loop while simulation is running
     while robot.step(time_step) != -1:
-        #Get keyboard input every frame
-        key = keyboard.getKey()
-               
-        #up arrow - Highest position 
-        if (key==315):
-            set_camera_position(camera_max_position)
-            #print("[ Up Arrow    [^] ] pressed: Moving Camera to Max upwards position: " + str(camera_max_position))
-            
-        #down arrow - Lowest position
-        elif (key==317):
-            set_camera_position(camera_min_position)
-            #print("[ Down Arrow  [v] ] pressed: Moving Camera to Max downwards position: " + str(camera_min_position))
-            
-        #right arrow - resets position to 0
-        elif (key==316):
-            set_camera_position(camera_default_position)
-            #print("[ Right Arrow [>] ] pressed: Moving Camera to default position: " + str(camera_default_position))
-            
-        else:
-            rotate = 0;
+        #Code goes here       
+        
+        
+        
+        pass #end of code region
                 
     #End of AI
     reset_motors()
