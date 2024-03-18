@@ -6,13 +6,12 @@ This is a Bradley University CS capstone project, currently designing and develo
 
 !!!This Project Documentation is currently in development and subject to change!!!
 
-*future screenshots*
+<!-- future screenshots -->
+
 
 <details>
  <summary>Webots Setup</summary>
   <ol>
-<!-- -->
-<summary>Webots Setup</summary>
 <!--Webots Setup -->
 
 Webot's site can be found at [https://cyberbotics.com/](https://cyberbotics.com/) where you will find the installer download on the homepage.
@@ -159,4 +158,4 @@ The AI starts on line 101, and I've premade a while loop that prints the RGB of 
 -->
 ## Repository Feedback
 
-If you haven't already completed the google form, please feel free to add your input to our project here as it is much appreciated: [https://forms.gle/rBniEH7UuqJXANCg7](https://forms.gle/rBniEH7UuqJXANCg7) 
+If you haven't already completed the google form, please feel free to add your input to our project here as it is much appreciated: [Feedback Form](https://forms.gle/rBniEH7UuqJXANCg7) 
