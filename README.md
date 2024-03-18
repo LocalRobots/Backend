@@ -1,6 +1,6 @@
-## Webots Challenges
+<!-- Webots Challenges -->
 
-<summary>Purpose</summary>
+## Purpose
 <!-- About The Project -->  
 This is a Bradley University CS capstone project, currently designing and developing robot prototypes and testing thereof for usage in a related Bradley AI course. Feedback to this repository in labeling points of improvement will help to benefit current and future students usage of this project's and it's outcomes.
 
@@ -131,7 +131,7 @@ Provided below are the student challenges, designed to help student's understand
 
 
 
-## Project Setup
+<!--## Project Setup
 
 If you had forked this repository, sync the respotory
 
@@ -142,20 +142,21 @@ If you had forked this repository, sync the respotory
 Let's open up the Webots world
 
 * In the file explorer open up the file from this GitHub at ...AI-Robots-Challenges\Webots\worlds\SecondChallenge.wbt
+-->
 
-
-## Coding with the camera
+<!--## Coding with the camera
 
 Since last challenge, there are more functions, that aren't necessary for this challenge, but could be helpful. DriveForward(angle) and TurnCameraUp()/TurnCameraDown(). The TurnCamera functions are work in progress because the camera can turn inside the robot.
 
 The AI starts on line 101, and I've premade a while loop that prints the RGB of a pixel on the camera. Specifically the bottom middle pixel. This is done by imageGetColor(Image, width, x, y) function. You can see the camera in the top left corner of the simulation window. If you move the middle ball and use the red arrow to drag it toward the robot, the print statement will change.
+-->
 
-<img src="Images/Challenge2.png" width = "500" >
+<!--<img src="Images/Challenge2.png" width = "500" >
 
 * Now try the parallel parking challenge
 * Once you complete it, feel free to move Evil Duck onto the top of the track for extra credit.
 
+-->
+## Repository Feedback
 
-## Task
-
-If you haven't completed the google form from last time (I only have 2 responses), fill it out [https://forms.gle/rBniEH7UuqJXANCg7](https://forms.gle/rBniEH7UuqJXANCg7) It will take 5-10 minutes to fill out.
+If you haven't already completed the google form, please feel free to add your input to our project here as it is much appreciated: [https://forms.gle/rBniEH7UuqJXANCg7](https://forms.gle/rBniEH7UuqJXANCg7) 
