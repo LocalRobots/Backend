@@ -25,12 +25,12 @@ Confirm the correct operating system installer as shown below the download butto
 
 <!--Understanding Webots -->
 
-\nLet's start by opening up the Webots tutorial world: 
+Let's start by opening up the Webots tutorial world: 
 * In the file explorer open up the 'world' file from this repository located at "...AI-Robots-Challenges\Webots\worlds\moose_demo.wbt"
 * When you open up Webots for the first time, you'll be prompted to choose a theme, continue by selecting 'Start Webots with the selected theme'
 * Congrats, you've successfully loaded the world! Here you can get accustomed to the environment and interface
   
-\nThis 'world' you opened up is one of Webot's open source demo worlds. Here, the robot demonstates simple movement ai that traverses between defined checkpoints. 
+This 'world' you opened up is one of Webot's open source demo worlds. Here, the robot demonstates simple movement ai that traverses between defined checkpoints. 
 
 Take note of some important features of the interface:
 * To rotate the camera, hold left-click while moving your mouse inside the simulation window
@@ -45,12 +45,12 @@ Take note of some important features of the interface:
 <!--GitHub Setup-->
 ---
 
-\nIf you are a student or someone that would like to go through the challenges yourself, creating your own clone of the repository can be accomplished as follows:
+If you are a student or someone that would like to go through the challenges yourself, creating your own clone of the repository can be accomplished as follows:
  * Download and install 'Github Desktop' from [https://desktop.github.com/](https://desktop.github.com/)
  * Go to 'File' -> 'Clone a repository', and the after selecting the URL tab input the URL of this repository, otherwise on the Github webpage of the repository, click the '<> Code' dropdown and select 'Open with Github Desktop'
  * Once cloned, you now have your own version of the project and upload your personal projects to your own Github
  
-\nNow that you have the project files, you may explore the various challenges and worlds provided. The first challenge is located at "...AI-Robots-Challenges\Webots\worlds\FirstChallenge.wbt".
+Now that you have the project files, you may explore the various challenges and worlds provided. The first challenge is located at "...AI-Robots-Challenges\Webots\worlds\FirstChallenge.wbt".
 
 ---
  
@@ -71,7 +71,7 @@ Provided below are the student challenges, designed to help student's understand
  
  ## Make a Box (Optional)
  
- If you want to understand how Webots works, you will need to understand the node system. Nodes are shown in the left window, and nodes work both as objects and as variables. To understand it better, let's make a box.
+If you want to understand how Webots works, you will need to understand the node system. Nodes are shown in the left window, and nodes work both as objects and as variables. To understand it better, let's make a box.
  
  <img src="Images\Example1.gif" width = "500" >
  
