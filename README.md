@@ -1,7 +1,7 @@
 ## Webots Challenges
 
 <summary>Purpose</summary>
-## About The Project
+<!-- About The Project -->  
 This is a Bradley University CS capstone project, currently designing and developing robot prototypes and testing thereof for usage in a related Bradley AI course. Feedback to this repository in labeling points of improvement will help to benefit current and future students usage of this project's and it's outcomes.
 
 !!!This Project Documentation is currently in development and subject to change!!!
@@ -11,9 +11,9 @@ This is a Bradley University CS capstone project, currently designing and develo
 <details>
  <summary>Webots Setup</summary>
   <ol>
-
+<!-- -->
 <summary>Webots Setup</summary>
-## Webots Setup
+<!--Webots Setup -->
 
 Webot's site can be found at [https://cyberbotics.com/](https://cyberbotics.com/) where you will find the installer download on the homepage.
 
@@ -23,7 +23,7 @@ Confirm the correct operating system installer as shown below the download butto
 * On Windows, in the case of an 'Windows protected your PC' warning prompt, click on 'More info' and then confirm to run
 * Follow the install wizard dialogues and installations to finish setting up Webots!
 
-## Understanding Webots
+<!--Understanding Webots -->
 
 Let's start by opening up the Webots tutorial world: 
 * In the file explorer open up the 'world' file from this repository located at "...AI-Robots-Challenges\Webots\worlds\moose_demo.wbt"
@@ -42,17 +42,17 @@ Take note of some important features of the interface:
 * To the left of that, the '|<<' function resets the time of the simulation to 0
 * Pausing the simulation before resetting will keep the simulation in a paused state after resetting
  
- ## GitHub Setup
+<!--GitHub Setup-->
 
  If you are a student or someone that would like to go through the challenges yourself, creating your own clone of the repository can be accomplished as follows:
  * Download and install 'Github Desktop' from [https://desktop.github.com/](https://desktop.github.com/)
  * Go to 'File' -> 'Clone a repository', and the after selecting the URL tab input the URL of this repository, otherwise on the Github webpage of the repository, click the '<> Code' dropdown and select 'Open with Github Desktop'
  * Once cloned, you now have your own version of the project and upload your personal projects to your own Github
  
- Now that you have the project files, you may explore the various challenges and worlds provided. The first challenge is located at "...AI-Robots-Challenges\Webots\worlds\FirstChallenge.wbt".
+Now that you have the project files, you may explore the various challenges and worlds provided. The first challenge is located at "...AI-Robots-Challenges\Webots\worlds\FirstChallenge.wbt".
 
 ---
-
+ 
 Provided below are the student challenges, designed to help student's understanding of various AI principle and test code for their robots functionality before transferring to the physical hardware.
 
  </ol>
