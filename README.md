@@ -1,61 +1,59 @@
-## Previous Challenges
+## Webots Challenges
+
+<summary>Purpose</summary>
+## About The Project
+This is a Bradley University CS capstone project, currently designing and developing robot prototypes and testing thereof for usage in a related Bradley AI course. Feedback to this repository in labeling points of improvement will help to benefit current and future students usage of this project's and it's outcomes.
+
+!!!This Project Documentation is currently in development and subject to change!!!
+
+*future screenshots*
 
 <details>
  <summary>Webots Setup</summary>
   <ol>
-   
- ## About The Project
-This is a CS capstone project that is currently designing a new robot for your AI class. We need help getting feedback on the usefulness of the virtual robot, so getting that feedback from current students will help future students.
 
-The virtual world is currently in development and these GitHub instructions were set up in less than a week, so your task this week is to download Webots (the program used for simulating the robot)
-
-*I will add screenshots in the future*
-
-
+<summary>Webots Setup</summary>
 ## Webots Setup
 
-Go to Webot's site [https://cyberbotics.com/](https://cyberbotics.com/) here and click the download button.
+Webot's site can be found at [https://cyberbotics.com/](https://cyberbotics.com/) where you will find the installer download on the homepage.
 
-If you aren't on Windows, you'll need to click the arrow next to the download button to specify which installer you want.
-
+Confirm the correct operating system installer as shown below the download button, using the arrow dropdown menu next to the download button if it does not match your system.
 
 * Run the installer you just downloaded
-* On Windows, you might get the Windows protected your PC. Click "More info" then run anyways
-* Follow the installer instructions
-* After installing, uncheck "Launch Webots," then click finish
-
-
-Once you've installed Webots, clone this GitHub to your PC.
-
+* On Windows, in the case of an 'Windows protected your PC' warning prompt, click on 'More info' and then confirm to run
+* Follow the install wizard dialogues and installations to finish setting up Webots!
 
 ## Understanding Webots
 
-Let's start by opening up Webots 
-
-* In the file explorer open up the file from this GitHub at ...AI-Robots-Challenges\Webots\worlds\moose_demo.wbt
-* When you open up Webots for the first time, choose which theme you like, and press "Start Webots with the selected theme."
-* Close out of the guided tutorial window
-
-The word you opened up is one of Webot's demo worlds. In this world, the robot moves back and forth hitting checkpoints. Let's start by explaining how to control your camera in Webots.
-
+Let's start by opening up the Webots tutorial world: 
+* In the file explorer open up the 'world' file from this repository located at "...AI-Robots-Challenges\Webots\worlds\moose_demo.wbt"
+* When you open up Webots for the first time, you'll be prompted to choose a theme, continue by selecting 'Start Webots with the selected theme'
+* Congrats, you've successfully loaded the world! Here you can get accustomed to the environment and interface
 * To rotate the camera, hold left-click while moving your mouse inside the simulation window
 * To move the camera, hold right-click while moving your mouse inside the simulation window
+  
+This 'world' you opened up is one of Webot's open source demo worlds. Here, the robot demonstates simple movement ai that traverses between defined checkpoints. 
 
-Once you've tried controlling the camera, let's control the simulation by looking at other windows.
+Take note of some important features of the interface:
+* The left side of the interface contains the hierarchy of nodes (similar to objects)
+* The right side contains the built in text editor section where you can edit scripts inside the program
+* Above the simulation window, you'll find the main functions for the simulation, tooltip information is displayed when hovered over the different functions
+* The 'pause/play' function starts or pauses the current world simulation
+* To the left of that, the '|<<' function resets the time of the simulation to 0
+* Pausing the simulation before resetting will keep the simulation in a paused state after resetting
+ 
+ ## GitHub Setup
 
-* Above the simulation window, you'll see a bunch of icons, you can see what they do by hovering over them
-* The most useful buttons are the pause/play simulation button. Click the pause button between all the arrows to pause the simulation
-* To the left of that, click the |<< button or the reset simulation button
-* Because you paused the simulation before you reset it, it will start paused until you press play again. Now go back to where the pause button was and press play
-
-To the left of the simulation, you have all your objects. To the right, you have the built-in text editor for your robot. Next week we will cover how to use them.
-
-
-## Task
-
-There is no task or anything you need to turn in this week. If you are having trouble installing Webots, let Dr. Grichnik know.
+ If you are a student or someone that would like to go through the challenges yourself, creating your own clone of the repository can be accomplished as follows:
+ * Download and install 'Github Desktop' from [https://desktop.github.com/](https://desktop.github.com/)
+ * Go to 'File' -> 'Clone a repository', and the after selecting the URL tab input the URL of this repository, otherwise on the Github webpage of the repository, click the '<> Code' dropdown and select 'Open with Github Desktop'
+ * Once cloned, you now have your own version of the project and upload your personal projects to your own Github
+ 
+ Now that you have the project files, you may explore the various challenges and worlds provided. The first challenge is located at "...AI-Robots-Challenges\Webots\worlds\FirstChallenge.wbt".
 
 ---
+
+Provided below are the student challenges, designed to help student's understanding of various AI principle and test code for their robots functionality before transferring to the physical hardware.
 
  </ol>
 </details>
@@ -67,24 +65,8 @@ There is no task or anything you need to turn in this week. If you are having tr
   <summary>Challenge 1</summary>
   <ol>
  
-   ## About The Project
- This is a CS capstone project that is currently designing a new robot for your AI class. We need help getting feedback on the usefulness of the virtual robot, so getting that feedback from current students will help future students.
  
- Your task this week will be to code and run the first (week 10) challenge in the virtual world
-
  
- ## GitHub Setup
- 
- This week, and from now on you will be editing files, so I assume you want to keep them. Therefore, fork this repository.
- 
- * In the top right corner of this GitHub, hit the fork button
- * Scroll down and click Create Fork
- * When the respotory is completed, clone the forked respotory to your device
- 
- Now that GitHub is set up, let's open up the Webots world
- 
- * In the file explorer open up the file from this GitHub at ...AI-Robots-Challenges\Webots\worlds\FirstChallenge.wbt
-
  
  ## Make a Box (Optional)
  
