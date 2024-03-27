@@ -1,0 +1,98 @@
+#VRML_SIM R2023b utf8
+PROTO ballStand5[
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation 0 0 1 0 
+]
+{
+  Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.6 0.5
+        metalness 0
+      }
+      geometry Mesh {
+        url [
+          "../protos/MeshReference/webotsStand4.dae"
+        ]
+      }
+    }
+  ]
+  name "ballStand3"
+  boundingObject DEF hitbox Group {
+    children [
+      DEF square_North Pose {
+        translation -0.014 0 0
+        rotation -6.88392e-07 1 7.19235e-09 -1.5707953071795862
+        children [
+          DEF rod Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              metalness 0
+            }
+            geometry Box {
+              size 0.0025 0.019 0.019
+            }
+          }
+        ]
+      }
+      DEF square_NW Pose {
+        translation -0.0101 -0.0101 0
+        rotation -0.6785987877241534 -0.28108491207243697 -0.6785977877244662 2.59355
+        children [
+          USE rod
+        ]
+      }
+      DEF square_NE Pose {
+        translation -0.0101 0.0101 0
+        rotation 0.6786017087072255 -0.2810828793439351 0.6785957087098009 2.59358
+        children [
+          USE rod
+        ]
+      }
+      DEF square_South Pose {
+        translation 0.014 0 0
+        rotation 0.707108281185553 -9.236343672883591e-09 0.70710528118436 -3.1415853071795863
+        children [
+          USE rod
+        ]
+      }
+      DEF square_SW Pose {
+        translation 0.0101 -0.0101 0
+        rotation 0.6786017087072255 -0.2810828793439351 0.6785957087098009 2.59358
+        children [
+          USE rod
+        ]
+      }
+      DEF square_SE Pose {
+        translation 0.0101 0.0101 0
+        rotation -0.6785987877241534 -0.28108491207243697 -0.6785977877244662 2.5935496938995746
+        children [
+          USE rod
+        ]
+      }
+      DEF square_West Pose {
+        translation 0 -0.014 0
+        rotation -0.5773509358560258 0.577349935856137 -0.577349935856137 -2.094395307179586
+        children [
+          USE rod
+        ]
+      }
+      DEF square_East Pose {
+        translation 0 0.014 0
+        rotation -0.5773509358560258 0.577349935856137 -0.577349935856137 -2.094395307179586
+        children [
+          USE rod
+        ]
+      }
+    ]
+  }
+  physics Physics {
+    mass 0.3
+    damping Damping {
+    }
+  }
+}
+}
