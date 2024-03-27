@@ -1,0 +1,276 @@
+#VRML_SIM R2023b utf8
+PROTO ballStandFrame[
+  field SFVec3f    translation 0 0 0
+  field SFRotation rotation 0 0 1 0 
+]
+{
+  Solid {
+  translation IS translation
+  rotation IS rotation
+  children [
+    DEF circle Group {
+      children [
+        DEF square_North Pose {
+          translation -0.016 0 0
+          rotation -6.88392e-07 1 7.19235e-09 -1.5707953071795862
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF square_NW Pose {
+          translation -0.0115 -0.0115 0
+          rotation -0.6785987877241534 -0.28108491207243697 -0.6785977877244662 2.59355
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF border1_NW Pose {
+          translation -0.0087 -0.0207 0
+          rotation 0.7007519451271212 -0.1359629307085218 0.7003290604235308 2.88
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          rotationStep 0.01
+        }
+        DEF border2_NW Pose {
+          translation -0.0207 -0.00857 -2.1494e-06
+          rotation 0.9655950061827049 0.18388000117738365 -0.18388700117742848 -1.6058353071795866
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          translationStep 0.001
+          rotationStep 0.01
+        }
+        DEF square_NE Pose {
+          translation -0.0115 0.0115 0
+          rotation 0.6786017087072255 -0.2810828793439351 0.6785957087098009 2.59358
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF border1_NE Pose {
+          translation -0.0087 0.0207 0
+          rotation -0.7011132762542925 -0.1359884128674364 -0.6999623742929098 2.87591
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          rotationStep 0.01
+        }
+        DEF border2_NE Pose {
+          translation -0.0207 0.00857 -2.1494e-06
+          rotation -0.9655864749221214 0.1839058990998819 -0.1839058990998819 1.61
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          translationStep 0.001
+          rotationStep 0.01
+        }
+        DEF square_South Pose {
+          translation 0.016 0 0
+          rotation 0.707108281185553 -9.236343672883591e-09 0.70710528118436 -3.1415853071795863
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF square_SW Pose {
+          translation 0.0115 -0.0115 0
+          rotation 0.6786017087072255 -0.2810828793439351 0.6785957087098009 2.59358
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF border1_SW Pose {
+          translation 0.0087 -0.0207 0
+          rotation -0.7011577469125994 -0.13552995107959204 -0.7000067473280601 2.8756
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          rotationStep 0.01
+        }
+        DEF border2_SW Pose {
+          translation 0.0207 -0.00857 -2.1494e-06
+          rotation -0.9661492597072359 0.1824250490370455 -0.18241904903543268 1.60942
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          translationStep 0.001
+          rotationStep 0.01
+        }
+        DEF square_SE Pose {
+          translation 0.0115 0.0115 0
+          rotation -0.6785987877241534 -0.28108491207243697 -0.6785977877244662 2.5935496938995746
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF border1_SE Pose {
+          translation 0.0087 0.0207 0
+          rotation -0.7009580940429977 0.13382201795403154 -0.7005350939862466 -2.88
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          rotationStep 0.01
+        }
+        DEF border2_SE Pose {
+          translation 0.0207 0.00857 -2.1494e-06
+          rotation -0.13685899172420543 0.6990869577265624 -0.7018169575614807 2.87171
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.017
+              }
+            }
+          ]
+          translationStep 0.001
+          rotationStep 0.01
+        }
+        DEF square_West Pose {
+          translation 0 -0.016 0
+          rotation -0.5773509358560258 0.577349935856137 -0.577349935856137 -2.094395307179586
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+        DEF square_East Pose {
+          translation 0 0.016 0
+          rotation -0.5773509358560258 0.577349935856137 -0.577349935856137 -2.094395307179586
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.0025 0.0025 0.018
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "ballStandFrame"
+  boundingObject USE circle
+  physics Physics {
+    mass 0.3
+    damping Damping {
+    }
+  }
+}
+}
