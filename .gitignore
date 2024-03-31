@@ -5,3 +5,6 @@
 /*.class
 # exception breaking the recursion
 !foo.o
+# Default ignored files
+/shelf/
+/workspace.xml
