@@ -1,0 +1,910 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+DEF View Viewpoint {
+  orientation -0.38150269364805345 -0.13280914303462937 0.9147772550001922 3.758191184395416
+  position 0.8378510200607179 0.6918478067775707 1.1383879491152982
+  follow "Scene Viewer"
+  followType "Pan and Tilt Shot"
+}
+Robot {
+  name "Scene Viewer"
+  controller "scene_viewer"
+  supervisor TRUE
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  name "Wooden Floor"
+  floorSize 3 3
+  floorTileSize 1 1
+  floorAppearance Parquetry {
+    type "light strip"
+    colorOverride 1 0.984314 0.792157
+    IBLStrength 10
+  }
+  wallThickness 0.1
+  wallHeight 0.2
+}
+DEF Mat Pose {
+  translation 0 0 0.001
+  rotation 0 0 1 1.5708
+  children [
+    DEF RedStrip_Group Group {
+      children [
+        Transform {
+          translation 0 -0.0508 0
+          scale 0.1016 0.0127 1
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.65098 0 0
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 1 1 0.001
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.0508 0
+          scale 0.1016 0.0127 1
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.65098 0 0
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 1 1 0.001
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DEF ArenaGreen_Shape Shape {
+      appearance PBRAppearance {
+        baseColor 0.196078 0.396078 0.294118
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.9652 0.9652 0.0001
+      }
+    }
+    DEF PerimeterColor_Shape Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 0.8
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.0002
+        radius 0.4572
+      }
+    }
+    DEF ArenaCenterColor_Shape Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0.709804
+        roughness 0.8
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.00025
+        radius 0.4318
+      }
+    }
+  ]
+}
+Robot {
+  translation 0 0 0.075
+  rotation 0 0 1 3.14159
+  children [
+    DEF CameraArm_HingeJoint HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.045 0.028 0.009
+      }
+      device [
+        DEF Camera_RotationalMotor RotationalMotor {
+          name "CameraArm_rotational_motor"
+          minPosition -10
+          maxPosition 10
+        }
+      ]
+      endPoint Solid {
+        rotation 0 1 0 0
+        children [
+          DEF ArmShape3_Transform Pose {
+            translation 0.055 0 0.01
+            children [
+              DEF CameraFlat_Transform Pose {
+                translation 0.022 0 0
+                children [
+                  Solid {
+                    translation -0.0225 0 0
+                    boundingObject Box {
+                      size 0.044 0.013 0.013
+                    }
+                  }
+                  Camera {
+                    name "CameraArm_camera"
+                    boundingObject Box {
+                      size 0.003 0.025 0.025
+                    }
+                  }
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0.196078 0.196078 0.196078
+                    }
+                    geometry Box {
+                      size 0.003 0.025 0.025
+                    }
+                  }
+                ]
+              }
+              Shape {
+                appearance PBRAppearance {
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.045 0.013 0.013
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    DEF BaseShapes_Group Group {
+      children [
+        DEF CameraArm_Group Group {
+          children [
+            DEF CameraArmShapes_Transforms Group {
+              children [
+                DEF ArmShape1_Transform Pose {
+                  translation 0.045 0.02 0.005
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.015 0.012 0.03
+                      }
+                    }
+                  ]
+                }
+                DEF ArmShape4_Transform Pose {
+                  translation 0.045 0.00999996 0.0095
+                  rotation 1 0 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.498039 0.498039 0.498039
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.0055
+                      }
+                    }
+                  ]
+                }
+                DEF ArmShape2_Transform Pose {
+                  translation 0.045 0.02 0.008
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 0 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.013 0.019 0.02
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        DEF Track_Group Group {
+          children [
+            DEF TrackGroup1_Track Track {
+              translation -0.01 0.045 -0.037
+              children [
+                DEF Front1_TrackWheel TrackWheel {
+                  position 0.0335 0
+                  rotation 0.2109955944837725 -0.6911864254426915 0.6911889643159779 2.725703045067151
+                  radius 0.03
+                  children [
+                    DEF Decal_Cylinder Shape {
+                      appearance PBRAppearance {
+                        baseColor 1 1 0
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.018
+                        radius 0.023
+                      }
+                    }
+                    DEF Wheel_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.113725 0.113725 0.113725
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.017
+                        radius 0.03
+                      }
+                    }
+                  ]
+                }
+                DEF Back1_TrackWheel TrackWheel {
+                  position -0.03 0
+                  rotation 0.2109955944837725 -0.6911864254426915 0.6911889643159779 2.725703045067151
+                  radius 0.03
+                  children [
+                    DEF Decal_Cylinder Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.85098 0.85098 0.85098
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.018
+                        radius 0.023
+                      }
+                    }
+                    DEF Wheel_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.113725 0.113725 0.113725
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.017
+                        radius 0.03
+                      }
+                    }
+                  ]
+                }
+              ]
+              boundingObject Group {
+                children [
+                  Box {
+                    size 0.07 0.017 0.06
+                  }
+                  Pose {
+                    translation 0.034 0 0
+                    rotation 1 0 0 -1.5707953071795862
+                    children [
+                      DEF FrontWheel_Bounds_Cylinder Cylinder {
+                        height 0.016
+                        radius 0.03
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.03 0 0
+                    rotation 1 0 0 -1.5707953071795862
+                    children [
+                      DEF FrontWheel_Bounds_Cylinder Cylinder {
+                        height 0.016
+                        radius 0.03
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+              }
+              device [
+                LinearMotor {
+                  name "leftMotor"
+                }
+              ]
+              animatedGeometry Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 0
+                }
+                geometry Box {
+                  size 0.01 0.016 0.001
+                }
+              }
+              geometriesCount 0
+            }
+            DEF TrackGroup2_Track Track {
+              translation -0.01 -0.045 -0.037
+              children [
+                DEF Front1_TrackWheel TrackWheel {
+                  position 0.0335 0
+                  rotation 0.977316387270461 0.1497539889580253 -0.1497545390423066 1.5937428298832372
+                  radius 0.03
+                  children [
+                    DEF Decal_Cylinder Shape {
+                      appearance PBRAppearance {
+                        baseColor 1 1 0
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.018
+                        radius 0.023
+                      }
+                    }
+                    DEF Wheel_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.113725 0.113725 0.113725
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.017
+                        radius 0.03
+                      }
+                    }
+                  ]
+                }
+                DEF Back1_TrackWheel TrackWheel {
+                  position -0.03 0
+                  rotation 0.977316387270461 0.1497539889580253 -0.1497545390423066 1.5937428298832372
+                  radius 0.03
+                  children [
+                    DEF Decal_Cylinder Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.85098 0.85098 0.85098
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.018
+                        radius 0.023
+                      }
+                    }
+                    DEF Wheel_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.113725 0.113725 0.113725
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.017
+                        radius 0.03
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "track(1)"
+              boundingObject Group {
+                children [
+                  Box {
+                    size 0.07 0.017 0.06
+                  }
+                  Pose {
+                    translation 0.034 0 0
+                    rotation 1 0 0 -1.5707953071795862
+                    children [
+                      DEF FrontWheel_Bounds_Cylinder Cylinder {
+                        height 0.016
+                        radius 0.03
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.03 0 0
+                    rotation 1 0 0 -1.5707953071795862
+                    children [
+                      DEF FrontWheel_Bounds_Cylinder Cylinder {
+                        height 0.016
+                        radius 0.03
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+              }
+              device [
+                LinearMotor {
+                  name "rightMotor"
+                }
+              ]
+              animatedGeometry Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 0
+                }
+                geometry Box {
+                  size 0.01 0.016 0.001
+                }
+              }
+              geometriesCount 0
+            }
+          ]
+        }
+        DEF WheelAxel_Transforms_Group Group {
+          children [
+            DEF WheelAxel1_Transform Pose {
+              translation 0.025 -0.03 0
+            }
+            DEF WheelAxel2_Transform Pose {
+              translation 0.025 0.03 0
+            }
+            DEF WheelAxel3_Transform Pose {
+              translation -0.025 0.03 0
+            }
+            DEF WheelAxel4_Transform Pose {
+              translation -0.025 -0.03 0
+            }
+          ]
+        }
+        DEF BridgeShapes_Group Group {
+          children [
+            DEF Bridge1_Transform Pose {
+              translation 0.034 -0.028 -0.031
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.003 0.003 0.043
+                  }
+                }
+              ]
+            }
+            DEF Bridge2_Transform Pose {
+              translation 0.034 0.0266 -0.031
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.003 0.003 0.043
+                  }
+                }
+              ]
+            }
+            DEF Bridge3_Transform Pose {
+              translation -0.0531 0.0266 -0.0253
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.003 0.003 0.053
+                  }
+                }
+              ]
+            }
+            DEF Bridge4_Transform Pose {
+              translation -0.0531 -0.028 -0.031
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.003 0.003 0.042
+                  }
+                }
+              ]
+            }
+            DEF Bridge5_Transform Pose {
+              translation -0.0531 -0.0085 -0.0063
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.003 0.003 0.015
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock1_Transform Pose {
+              translation 0.0085 0.009 -0.006
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.016 0.014 0.012
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock2_Transform Pose {
+              translation 0.0192 0.009 0.01
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.016 0.036 0.016
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock2b_Transform Pose {
+              translation 0.0172 0.009 0.004
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.011 0.034 0.008
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock2c_Transform Pose {
+              translation 0.0172 0.009 0.015
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                  }
+                  geometry Box {
+                    size 0.011 0.034 0.008
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock3_Transform Pose {
+              translation -0.0331 0.0264 0.0307
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.0588235 0.0588235 0.0588235
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.035 0.004 0.0225
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock4_Transform Pose {
+              translation -0.0331 0.0264 0.0107
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.0588235 0.0588235 0.0588235
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.035 0.004 0.0225
+                  }
+                }
+              ]
+            }
+            DEF BridgeBlock5_Transform Pose {
+              translation 0.0022 0.0102 0.0107
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.0588235 0.0588235 0.0588235
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.004 0.013 0.0225
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF PlatformShapes_Group Group {
+          children [
+            DEF Platform_Bottom_Transform Pose {
+              translation 0 0 -0.05
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.729412 0.486275 0
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.1143 0.0635 0.003
+                  }
+                }
+              ]
+            }
+            DEF Platform_Top_Transform Pose {
+              translation 0 0 -0.0119
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.729412 0.486275 0
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.1143 0.0635 0.003
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF ModuleShapes_Group Group {
+          children [
+            DEF MiddleBlock_Transform Pose {
+              translation -0.04 0.01 0.004
+              children [
+                DEF MidBlock_Transform Pose {
+                  translation 0.03 0 0
+                  children [
+                    DEF BackBlock_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.878431 0.878431 0.878431
+                        roughness 1
+                      }
+                      geometry Box {
+                        size 0.019 0.016 0.008
+                      }
+                    }
+                  ]
+                }
+                DEF BackBlock_Shape Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.878431 0.878431 0.878431
+                    roughness 1
+                  }
+                  geometry Box {
+                    size 0.019 0.016 0.008
+                  }
+                }
+              ]
+            }
+            DEF Board1_Transform Pose {
+              translation -0.0155 0.009 0
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0.666667 0
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.08 0.04 0.001
+                  }
+                }
+              ]
+            }
+            DEF Board2_Transform Pose {
+              translation -0.0155 0.009 0.019
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0.333333 0.498039
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.08 0.04 0.001
+                  }
+                }
+              ]
+            }
+            DEF Board3_Transform Pose {
+              translation -0.033 0.018 0.042
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0.666667 0
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.0349 0.02 0.001
+                  }
+                }
+              ]
+            }
+            DEF Battery_Transform Pose {
+              translation -0.021 0.009 0.0235
+              children [
+                DEF Battery1_Transform Pose {
+                  translation 6.27732e-07 0.0074 0.005
+                  rotation 0 1 0 1.57086
+                  children [
+                    DEF Battery_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.666667 0.333333 0
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.05
+                        radius 0.007
+                      }
+                    }
+                  ]
+                  rotationStep 0.26181
+                }
+                DEF Battery2_Transform Pose {
+                  translation 6.27732e-07 -0.0074 0.005
+                  rotation 0 1 0 1.57086
+                  children [
+                    DEF Battery_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.666667 0.333333 0
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.05
+                        radius 0.007
+                      }
+                    }
+                  ]
+                  rotationStep 0.26181
+                }
+                DEF BatteryBase_Shape Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.109804 0.109804 0.109804
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.064 0.03 0.008
+                  }
+                }
+              ]
+            }
+            DEF CableInsert_Transform Pose {
+              translation -0.031 -0.006 0.0149
+              children [
+                DEF CableHead_Transform Pose {
+                  translation 0 -0.013 0
+                  children [
+                    DEF BatteryBase_Shape Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.0823529 0.0823529 0.0823529
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.017 0.014 0.0085
+                      }
+                    }
+                  ]
+                }
+                DEF BatteryBase_Shape Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.109804 0.109804 0.109804
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.015 0.014 0.007
+                  }
+                }
+              ]
+            }
+            DEF PinBlock_Transform Pose {
+              translation -0.0391 0.0118 0.046
+              children [
+                DEF BatteryBase_Shape Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0 1
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.022 0.007 0.008
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF MotorShapes_Group Group {
+          children [
+            DEF Motor1_Transform Pose {
+              translation 0.012 -0.018 -0.036
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.037 0.025 0.025
+                  }
+                }
+              ]
+            }
+            DEF Motor2_Transform Pose {
+              translation 0.012 0.018 -0.036
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.037 0.025 0.025
+                  }
+                }
+              ]
+            }
+            DEF MotorBack1_Transform Pose {
+              translation -0.014 -0.018 -0.036
+              rotation 0 1 0 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.235294 0.235294 0.235294
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.03
+                    radius 0.0115
+                  }
+                }
+              ]
+            }
+            DEF MotorBack1_Transform Pose {
+              translation -0.014 0.018 -0.036
+              rotation 0 1 0 1.5708
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.235294 0.235294 0.235294
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.03
+                    radius 0.0115
+                  }
+                }
+              ]
+            }
+            DEF BackWheelAxle1_Transform Pose {
+              translation -0.041 -0.015 -0.038
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0.498039
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.018 0.02 0.023
+                  }
+                }
+              ]
+            }
+            DEF BackWheelAxle1_Transform Pose {
+              translation -0.041 0.015 -0.038
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 1 0.498039
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.018 0.02 0.023
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF BaseShape_Floor_Root Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0.498039
+            transparency 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1143 0.0635 0.1016
+          }
+        }
+      ]
+    }
+  ]
+  boundingObject Box {
+    size 0.1143 0.0635 0.1016
+  }
+  physics Physics {
+  }
+  controller "first_challenge_controller"
+}
