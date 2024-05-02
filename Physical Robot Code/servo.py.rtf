@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+
+\f0\fs24 \cf0 import RPi.GPIO as GPIO\
+import time\
+\
+# Set GPIO mode\
+GPIO.setmode(GPIO.BOARD)\
+\
+# Set the GPIO pin connected to the servo\
+servo_pin = 5  # Assuming the servo signal pin is connected to GPIO pin 5\
+GPIO.setup(servo_pin, GPIO.OUT)\
+\
+# Create a PWM instance\
+pwm = GPIO.PWM(servo_pin, 50)  # 50 Hz (20 ms period)\
+\
+# Function to set the angle of the servo\
+def set_angle(angle):\
+    duty = angle / 18 + 2  # Convert angle to duty cycle (0 to 180 degrees)\
+    pwm.ChangeDutyCycle(duty)\
+    time.sleep(0.5)  # Allow time for the servo to move\
+\
+# Rotate the servo to different angles\
+try:\
+    pwm.start(0)  # Start PWM with 0% duty cycle (neutral position)\
+    while True:\
+        set_angle(0)  # Rotate to 0 degrees\
+        time.sleep(1)  # Wait for 1 second\
+        set_angle(90)  # Rotate to 90 degrees\
+        time.sleep(1)  # Wait for 1 second\
+        set_angle(180)  # Rotate to 180 degrees\
+        time.sleep(1)  # Wait for 1 second\
+except KeyboardInterrupt:\
+    # Clean up GPIO on keyboard interrupt\
+    pwm.stop()\
+    GPIO.cleanup()}
